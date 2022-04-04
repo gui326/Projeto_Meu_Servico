@@ -4,14 +4,22 @@ import { Ionicons } from '@expo/vector-icons';
 import { Titulo, Descricao, Label, Button, ButtonText, AreaInput, Input, IconArea, Logo } from "./styled";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
+import { useDispatch } from "react-redux";
+
+import { logar } from "../../store/modules/users/action";
 
 
 export default function Login(){
+    const dispatch = useDispatch();
     const navigation = useNavigation();
     const [inputAtivo, setInputAtivo] = useState({
         email: false,
         senha: false
     });
+
+    const handleLogin = () => {
+        dispatch(logar({name: 'teste'}));
+    }
 
     return(
         <SafeAreaView
@@ -74,7 +82,9 @@ export default function Login(){
                     />
                 </AreaInput>
 
-                <Button style={{ marginTop: 30 }}>
+                <Button 
+                onPress={() => handleLogin()}
+                style={{ marginTop: 30 }}>
                     <ButtonText>
                         Login
                     </ButtonText>
