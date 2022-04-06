@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Background = styled.View` 
     display: flex;
     flex-direction: row;
-    padding: 4% 1%;
+    padding: 4% 0;
 `;
 
 export const LogoArea = styled.View` 
@@ -24,20 +24,20 @@ export const IconArea = styled.View`
 
 export const Titulo = styled.Text` 
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     color: #737373;
 `;
 
 export const Tipo = styled.Text` 
-    font-weight: 700;
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 13px;
     color: #4E4E4E;
 `;
 
 export const Ultima = styled.Text` 
     margin-top: 2px;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 11px;
     color: #868686;
 `;
 

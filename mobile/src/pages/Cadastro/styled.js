@@ -16,9 +16,9 @@ export const Descricao = styled.Text`
 
 export const Label = styled.Text` 
     color: #AAAAAA;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
-    margin-top: 20px;
+    margin-top: 10px;
 `;
 
 export const Info = styled.Text` 
@@ -43,7 +43,7 @@ export const ButtonText = styled.Text`
 `;
 
 export const AreaInput = styled.View` 
-    height: 55px;
+    height: 45px;
     flex: 1;
     flex-direction: row;
 `;

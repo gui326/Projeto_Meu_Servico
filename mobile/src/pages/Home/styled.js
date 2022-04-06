@@ -19,7 +19,7 @@ export const Item = styled.View`
     height: 105px;
     background: #E83151;
     border-radius: 12px;
-    padding: 1%;
+    padding: 5%;
     margin-right: 5px;
 `;
 

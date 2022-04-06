@@ -1,6 +1,6 @@
 import { SafeAreaView, ScrollView, TouchableOpacity } from "react-native";
 
-import { FontAwesome5 } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 
 import { Titulo, Descricao, Valor, Button, ButtonText } from "./styled";
 import { useNavigation } from "@react-navigation/native";
@@ -10,7 +10,7 @@ export default function Servico(){
     const navigation = useNavigation();
 
     return(
-        <SafeAreaView>
+        <SafeAreaView style={{ backgroundColor: 'white', flex: 1 }}>
             <ScrollView
             showsVerticalScrollIndicator={false}
             style={{ paddingHorizontal: '4%', paddingTop: 40 }}
@@ -18,7 +18,7 @@ export default function Servico(){
                 <TouchableOpacity
                 onPress={() => navigation.goBack()}
                 >
-                    <FontAwesome5 name="arrow-left" size={24} color="#DBD4D3" />
+                    <AntDesign name="arrowleft" size={24} color="#DBD4D3" />
                 </TouchableOpacity>
 
                 <Titulo>

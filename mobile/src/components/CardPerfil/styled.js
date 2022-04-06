@@ -2,7 +2,6 @@ import styled from "styled-components/native";
 
 export const Background = styled.View` 
     padding: 15px 5px;
-    border: 1px solid #C9C2C3;
     display: flex;
     flex-direction: row;
     border-radius: 12px;
@@ -11,6 +10,7 @@ export const Background = styled.View`
 
 export const LogoArea = styled.View` 
     flex: 2;
+    align-self: center;
 `;
 
 export const InfoArea = styled.View` 
@@ -28,7 +28,7 @@ export const Categoria = styled.Text`
     font-size: 10px;
     line-height: 12px;
     color: #6A6A6A;
-    margin-left: 10px;
+    margin-left: 6px;
     align-self: center;
 `;
 
@@ -37,7 +37,7 @@ export const Pontuacao = styled.Text`
     font-size: 10px;
     line-height: 12px;
     color: #6A6A6A;
-    margin-left: 10px;
+    margin-left: 6px;
     align-self: center;
 `;
 

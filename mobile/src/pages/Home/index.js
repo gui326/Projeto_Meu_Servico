@@ -1,15 +1,18 @@
-import { SafeAreaView, ScrollView } from "react-native";
+import { SafeAreaView, ScrollView, TouchableOpacity } from "react-native";
 import Header from "../../components/Header";
 import Pesquisa from "../../components/Pesquisa";
 
 import { AntDesign } from '@expo/vector-icons';
 
 import { Area, Categoria, Item, Title } from "./styled";
+import { useNavigation } from "@react-navigation/native";
 
 
 export default function Home(){
+    const navigation = useNavigation();
+
     return(
-        <SafeAreaView>
+        <SafeAreaView style={{ backgroundColor: 'white', flex: 1 }}>
             <ScrollView
             showsVerticalScrollIndicator={false}
             >
@@ -29,29 +32,53 @@ export default function Home(){
                     horizontal
                     showsHorizontalScrollIndicator={false}
                     >
-                        <Item>
-                            <Title>Eletricista</Title>
-                        </Item>
+                        <TouchableOpacity
+                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 'Eletricista'})}
+                        >
+                            <Item>
+                                <Title>Eletricista</Title>
+                            </Item>
+                        </TouchableOpacity>
 
-                        <Item>
-                            <Title>Pedreiro</Title>
-                        </Item>
+                        <TouchableOpacity
+                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 'Pedreiro'})}
+                        >
+                            <Item>
+                                <Title>Pedreiro</Title>
+                            </Item>
+                        </TouchableOpacity>
 
-                        <Item>
-                            <Title>Confeiteira</Title>
-                        </Item>
+                        <TouchableOpacity
+                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 'Confeiteira'})}
+                        >
+                            <Item>
+                                <Title>Confeiteira</Title>
+                            </Item>
+                        </TouchableOpacity>
 
-                        <Item>
-                            <Title>Mecânico</Title>
-                        </Item>
+                        <TouchableOpacity
+                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 'Mecânico'})}
+                        >
+                            <Item>
+                                <Title>Mecânico</Title>
+                            </Item>
+                        </TouchableOpacity>
 
-                        <Item>
-                            <Title>Soldador</Title>
-                        </Item>
+                        <TouchableOpacity
+                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 'Soldador'})}
+                        >
+                            <Item>
+                                <Title>Soldador</Title>
+                            </Item>
+                        </TouchableOpacity>
 
-                        <Item>
-                            <Title>Encanador</Title>
-                        </Item>
+                        <TouchableOpacity
+                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 'Encanador'})}
+                        >
+                            <Item>
+                                <Title>Encanador</Title>
+                            </Item>
+                        </TouchableOpacity>
                     </ScrollView>
                 </Area>
 

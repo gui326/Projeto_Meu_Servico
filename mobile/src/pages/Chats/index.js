@@ -1,39 +1,39 @@
 import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView, ScrollView, TouchableOpacity } from "react-native";
-import CardPedido from "../../components/CardPedido";
+import CardChat from "../../components/CardChat";
 import Header from "../../components/Header";
 
-export default function Servicos(){
+export default function Chats(){
     const navigation = useNavigation();
 
     return(
         <SafeAreaView style={{ backgroundColor: 'white', flex: 1 }}>
-            <Header titulo="Serviços"/>
+            <Header titulo="Chat"/>
 
             <ScrollView
-            style={{ paddingHorizontal: '1%', paddingTop: 5, paddingBottom: 10 }}
             showsVerticalScrollIndicator={false}
             >
                 <TouchableOpacity
-                    onPress={() => navigation.navigate('Pedido')}
+                onPress={() => navigation.navigate('Chat')}
                 >
-                    <CardPedido />
+                    <CardChat />
                 </TouchableOpacity>
 
-                <CardPedido />
+                <CardChat />
 
-                <CardPedido />
+                <CardChat />
 
-                <CardPedido />
+                <CardChat />
 
-                <CardPedido />
+                <CardChat />
                 
-                <CardPedido />
+                <CardChat />
 
-                <CardPedido />
+                <CardChat />
 
-                <CardPedido />
-                
+                <CardChat />
+
+                <CardChat />
             </ScrollView>
         </SafeAreaView>
     )

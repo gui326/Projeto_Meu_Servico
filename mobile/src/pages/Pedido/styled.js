@@ -20,20 +20,6 @@ export const Topico = styled.Text`
     color: #6B6B6B;
 `;
 
-export const Button = styled.TouchableOpacity` 
-    height: 50px;
-    justify-content: center;
-    background: #E83151;
-    border-radius: 6px;
-`;
-
-export const ButtonText = styled.Text` 
-    text-align: center;
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
-`;
-
 export const ServicoDescricao = styled.Text` 
     font-weight: 400;
     font-size: 14px;
@@ -62,13 +48,6 @@ export const TextoTotal = styled.Text`
     font-size: 16px;
     line-height: 17px;
     color: #000000;
-`;
-
-export const Trocar = styled.Text` 
-    font-weight: 500;
-    font-size: 14px;
-    color: #E83151;
-    align-self: center;
 `;
 
 export const TituloPrimario = styled.Text` 

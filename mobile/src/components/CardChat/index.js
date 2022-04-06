@@ -7,16 +7,16 @@ import { Background, LogoArea, InfoArea, Titulo, Tipo, Ultima, IconArea } from "
 
 export default function CardChat(){
     return(
-        <Background style={{ borderBottomColor: '#C4C4C4', borderBottomWidth: 1 }}>
+        <Background>
             <LogoArea>
-                <Image source={require("../../../assets/miniLogoEmpresa.png")} style={{ width: 50, height: 50 }}/>
+                <Image source={require("../../../assets/miniLogoEmpresa.png")} style={{ width: 45, height: 45 }}/>
             </LogoArea>
             <InfoArea>
                 <Titulo>
                     Eletromanik
                 </Titulo>
                 <Tipo>
-                    Orçamento
+                    Pedido
                 </Tipo>
                 <Ultima>
                     ultima mensagem 20/03/2022 19:47

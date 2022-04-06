@@ -18,7 +18,7 @@ export const SubTitle = styled.Text`
 
 export const Title = styled.Text` 
     font-weight: 700;
-    font-size: 30px;
+    font-size: 26px;
     line-height: 36px;
     text-align: center;
     color: #FFFFFF;

@@ -23,7 +23,7 @@ export default function Login(){
 
     return(
         <SafeAreaView
-        style={{ flex: 1 }}
+        style={{ backgroundColor: 'white', flex: 1 }}
         >
             <ScrollView
             style={{ paddingVertical: 45, paddingHorizontal: 15}}
@@ -57,7 +57,7 @@ export default function Login(){
                 </Label>
                 <AreaInput>
                     <IconArea>
-                        <MaterialCommunityIcons name="email-outline" size={24} color={inputAtivo.email ? '#E83151' : "#AAAAAA"} />
+                        <MaterialCommunityIcons name="email-outline" size={20} color={inputAtivo.email ? '#E83151' : "#AAAAAA"} />
                     </IconArea>
                     <Input 
                     selectionColor={'#E83151'}
@@ -72,7 +72,7 @@ export default function Login(){
                 </Label>
                 <AreaInput>
                     <IconArea>
-                        <MaterialCommunityIcons name="key-outline" size={24} color={inputAtivo.senha ? '#E83151' : "#AAAAAA"} />
+                        <MaterialCommunityIcons name="key-outline" size={20} color={inputAtivo.senha ? '#E83151' : "#AAAAAA"} />
                     </IconArea>
                     <Input 
                     selectionColor={'#E83151'}

@@ -1,10 +1,9 @@
 import { SafeAreaView, ScrollView, View, Image, TouchableOpacity } from "react-native";
 
-import { FontAwesome5 } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 
-import { Area, Titulo, LogoArea, Categoria, Pontuacao, Descricao } from "./styled";
+import { Area, Titulo, LogoArea, Categoria, Pontuacao, Descricao, Header } from "./styled";
 import CardServico from "../../components/CardServico";
 import { useNavigation } from "@react-navigation/native";
 
@@ -13,19 +12,25 @@ export default function Perfil(){
     const navigation = useNavigation();
 
     return(
-        <SafeAreaView>
+        <SafeAreaView style={{ backgroundColor: 'white', flex: 1 }}>
+            
+            <Header>
+                <TouchableOpacity
+                style={{ flex: 0 }}
+                onPress={() => navigation.goBack()}
+                >
+                    <AntDesign name="arrowleft" size={24} color="#DBD4D3" />
+                </TouchableOpacity>
+
+                <Titulo>Eletromanik</Titulo>
+            </Header>
+            
+
+
             <ScrollView
             showsVerticalScrollIndicator={false}
             >
                 <Area>
-                    <TouchableOpacity
-                    onPress={() => navigation.goBack()}
-                    >
-                        <FontAwesome5 name="arrow-left" size={24} color="#DBD4D3" />
-                    </TouchableOpacity>
-
-                    <Titulo>Eletromanik</Titulo>
-
                     <LogoArea>
                         <Image
                         style={{ width: 50, height: 50 }}

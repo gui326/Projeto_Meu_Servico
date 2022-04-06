@@ -3,12 +3,12 @@ import { SafeAreaView, ScrollView, TouchableOpacity, View, Image } from "react-n
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-import { Titulo, Categoria, Button, ButtonText, Topico, ServicoNome, 
-    ServicoDescricao, TextoPrimario, TextoTotal, Trocar, TituloPrimario, SubtextoPrimario } from "./styled";
+import { Titulo, Categoria, Topico, ServicoNome, 
+    ServicoDescricao, TextoPrimario, TextoTotal, TituloPrimario, SubtextoPrimario } from "./styled";
 import { useNavigation } from "@react-navigation/native";
 
 
-export default function Contratacao(){
+export default function Pedido(){
     const navigation = useNavigation();
 
     return(
@@ -86,52 +86,38 @@ export default function Contratacao(){
                     Agendamento
                 </Topico>
 
-                <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <View style={{ display: 'flex', flexDirection: 'row' }}>
-                        <AntDesign style={{ alignSelf: 'center', paddingRight: 13 }} name="calendar" size={24} color="#6B6B6B" />
-                        <View style={{ display: 'flex', flexDirection: 'column' }}>
-                            <TituloPrimario>
-                                Dia 07/05/2022
-                            </TituloPrimario>
-                            <SubtextoPrimario>
-                                17:50 ~ 18:00
-                            </SubtextoPrimario>
-                        </View>
+                
+                <View style={{ display: 'flex', flexDirection: 'row' }}>
+                    <AntDesign style={{ alignSelf: 'center', paddingRight: 13 }} name="calendar" size={24} color="#6B6B6B" />
+                    <View style={{ display: 'flex', flexDirection: 'column' }}>
+                        <TituloPrimario>
+                            Dia 07/05/2022
+                        </TituloPrimario>
+                        <SubtextoPrimario>
+                            17:50 ~ 18:00
+                        </SubtextoPrimario>
                     </View>
-                    <Trocar>
-                        Trocar
-                    </Trocar>
                 </View>
+                    
 
                 <Topico style={{ marginTop: 15, marginBottom: 15, borderBottomWidth: 1, borderBottomColor: 'lightgrey' }}>
                     Pagamento
                 </Topico>
 
-                <View style={{ marginBottom: 15, display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <View style={{ display: 'flex', flexDirection: 'row' }}>
-                        <FontAwesome5 
-                        style={{ alignSelf: 'center', paddingRight: 13 }}
-                        name="money-check" size={19} color="#6B6B6B" />
+                <View style={{ display: 'flex', flexDirection: 'row' }}>
+                    <FontAwesome5 
+                    style={{ alignSelf: 'center', paddingRight: 13 }}
+                    name="money-check" size={19} color="#6B6B6B" />
 
-                        <View style={{ display: 'flex', flexDirection: 'column' }}>
-                            <TituloPrimario>
-                                Cartão
-                            </TituloPrimario>
-                            <SubtextoPrimario>
-                                Pagamento realizado na hora do serviço
-                            </SubtextoPrimario>
-                        </View>
+                    <View style={{ display: 'flex', flexDirection: 'column' }}>
+                        <TituloPrimario>
+                            Cartão
+                        </TituloPrimario>
+                        <SubtextoPrimario>
+                            Pagamento realizado na hora do serviço
+                        </SubtextoPrimario>
                     </View>
-                    <Trocar>
-                        Trocar
-                    </Trocar>
                 </View>
-
-                <Button style={{ marginTop: 10 }}>
-                    <ButtonText>
-                        Fazer Contratação
-                    </ButtonText>
-                </Button>
             </ScrollView>
         </SafeAreaView>
     )

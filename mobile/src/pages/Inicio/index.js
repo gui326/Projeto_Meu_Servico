@@ -18,7 +18,7 @@ export default function Inicio(){
                 <Image style={{ marginTop: 7 }} source={require('../../../assets/ImagemFundo.png')}/>
 
                 <Titulo>
-                    MEU SERVIÇO
+                    Meu Serviço
                 </Titulo>
 
                 <Descricao>

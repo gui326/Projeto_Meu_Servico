@@ -3,7 +3,6 @@ import styled from "styled-components/native";
 export const Background = styled.View` 
     border-radius: 12px;
     padding: 15px 10px;
-    border: 1px solid #C9C2C3;
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;

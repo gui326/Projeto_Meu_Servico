@@ -10,12 +10,11 @@ export default function CardPedido(){
         <Background>
             <InfoArea>
                 <View style={{ display: "flex", flexDirection: "row" }}>
-                    <Image source={require("../../../assets/miniLogoEmpresa.png")} />
+                    <Image style={{ width: 35, height: 35 }} source={require("../../../assets/miniLogoEmpresa.png")} />
                     <Titulo>Eletromanik</Titulo>
                 </View>
-                <View style={{ display: "flex", flexDirection: "row", marginVertical: 5 }}>
+                <View style={{ display: "flex", flexDirection: "row", marginVertical: 12 }}>
                     <FontAwesome5 
-                    style={{ marginLeft: 5 }}
                     name="check-circle" size={15} color="#31A91E" />
                     <Info>
                         Serviço realizado - Serviço #341230

@@ -10,14 +10,14 @@ export default function CardPerfil(props){
     return(
         <Background>
             <LogoArea>
-                <Image source={require('../../../assets/logoEmpresa.png')}/>
+                <Image style={{ alignSelf: 'center', width: 55, height: 55 }} source={require('../../../assets/logoEmpresa.png')}/>
             </LogoArea>
             <InfoArea>
                 <Titulo>
-                    Eletromanik
+                    Eletromanik2
                 </Titulo>
                 <View style={{ marginVertical: 10, display: "flex", flexDirection: "row" }}>
-                    <View style={{ marginRight: 15, display: "flex", flexDirection: "row" }}>
+                    <View style={{ marginRight: 12, display: "flex", flexDirection: "row" }}>
                         <MaterialCommunityIcons name="tag-text-outline" size={18} color="#868686" />
                         <Categoria>Eletricista</Categoria>
                     </View>
