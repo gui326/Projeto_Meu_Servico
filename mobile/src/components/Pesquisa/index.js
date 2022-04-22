@@ -1,9 +1,14 @@
+import { useState } from "react";
 import { Area, SubTitle, Title, AreaInput, Input } from "./styled";
 import { MaterialIcons } from '@expo/vector-icons';
 import { View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
  
 export default function Pesquisa(){
+    const [pesquisaValue, setPesquisaValue] = useState("");
+    const navigation = useNavigation();
+
     return(
         <Area>
             <SubTitle>
@@ -34,7 +39,12 @@ export default function Pesquisa(){
                 name="search" size={30} color="#E83151" />
 
                 <Input
+                value={pesquisaValue}
+                onChangeText={setPesquisaValue}
                 selectionColor={'#E83151'}
+                onSubmitEditing={() => {
+                    navigation.navigate('Pesquisa', {pesquisa: pesquisaValue})
+                }}
                 />
             </AreaInput>
         </Area>

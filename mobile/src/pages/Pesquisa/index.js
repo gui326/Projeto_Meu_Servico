@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ScrollView, SafeAreaView, TouchableOpacity, View } from "react-native";
+import { ScrollView, SafeAreaView, TouchableOpacity, View, ActivityIndicator } from "react-native";
 import Header from "../../components/Header";
 import { MaterialIcons } from '@expo/vector-icons';
 import SkeletonContent from 'react-native-skeleton-content';
@@ -11,19 +11,12 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function Pesquisa(props){
     const navigation = useNavigation();
-    const [pesquisa, setPesquisa] = useState("");
-    const [loading, setLoading] = useState(false);
+    const [pesquisa, setPesquisa] = useState(props.route?.params?.pesquisa || "");
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        if(props.route?.params?.pesquisa){
-            setPesquisa(props.route.params.pesquisa);
-            setLoading(true);
-        }
- 
+        setLoading(false);
     }, [])
-    
-
-    console.log(props.route?.params?.pesquisa);
 
     return(
         <SafeAreaView style={{ backgroundColor: 'white', flex: 1 }}>
