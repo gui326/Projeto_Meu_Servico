@@ -1,15 +1,20 @@
+import { useState } from "react"; 
 import { SafeAreaView, ScrollView, TouchableOpacity, View, Image } from "react-native";
 
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 import { Titulo, Categoria, Button, ButtonText, Topico, ServicoNome, 
-    ServicoDescricao, TextoPrimario, TextoTotal, Trocar, TituloPrimario, SubtextoPrimario } from "./styled";
+    ServicoDescricao, TextoPrimario, TextoTotal, Trocar, TituloPrimario, SubtextoPrimario, OpcaoModal, TituloModal } from "./styled";
 import { useNavigation } from "@react-navigation/native";
+import MyModal from "../../components/MyModal";
+
 
 
 export default function Contratacao(){
     const navigation = useNavigation();
+    const [modalVisible, setModalVisible] = useState(false);
+    const [pagamento, setPagamento] = useState("dinheiro");
 
     return(
         <SafeAreaView style={{ backgroundColor: 'white', flex: 1 }}>
@@ -111,20 +116,24 @@ export default function Contratacao(){
                     <View style={{ display: 'flex', flexDirection: 'row' }}>
                         <FontAwesome5 
                         style={{ alignSelf: 'center', paddingRight: 13 }}
-                        name="money-check" size={19} color="#6B6B6B" />
+                        name={pagamento === "dinheiro" ? "money-bill-alt" :"money-check"} size={19} color="#6B6B6B" />
 
                         <View style={{ display: 'flex', flexDirection: 'column' }}>
                             <TituloPrimario>
-                                Cartão
+                                {pagamento === "dinheiro" ? "Dinheiro" : "Cartão"}
                             </TituloPrimario>
                             <SubtextoPrimario>
                                 Pagamento realizado na hora do serviço
                             </SubtextoPrimario>
                         </View>
                     </View>
-                    <Trocar>
-                        Trocar
-                    </Trocar>
+                    <TouchableOpacity
+                    onPress={() => setModalVisible(true)}
+                    >
+                        <Trocar>
+                            Trocar
+                        </Trocar>
+                    </TouchableOpacity>
                 </View>
 
                 <Button style={{ marginTop: 10 }}>
@@ -133,6 +142,26 @@ export default function Contratacao(){
                     </ButtonText>
                 </Button>
             </ScrollView>
+
+            <MyModal modalVisible={modalVisible} setModalVisible={setModalVisible}>
+                <TituloModal>
+                    Selecione o metódo de pagamento
+                </TituloModal>
+                <TouchableOpacity
+                onPress={() => {setPagamento("dinheiro"), setModalVisible(false)}}
+                >
+                    <OpcaoModal>
+                        Dinheiro
+                    </OpcaoModal>
+                </TouchableOpacity>
+                <TouchableOpacity
+                onPress={() => {setPagamento("cartao"), setModalVisible(false)}}
+                >
+                    <OpcaoModal>
+                        Cartão de crédito/débito
+                    </OpcaoModal>
+                </TouchableOpacity>
+            </MyModal>
         </SafeAreaView>
     )
 }

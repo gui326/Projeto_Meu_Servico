@@ -35,7 +35,7 @@ export default function AppRoutes(props){
             }}
             />
 
-            <Tab.Screen name="Pesquisa" component={Pesquisa}
+            <Tab.Screen name="Pesquisa" component={PerfilStack}
             listeners={({ navigation }) => ({
                 blur: () => navigation.setParams({ screen: undefined })
             })}
@@ -65,11 +65,7 @@ export default function AppRoutes(props){
             }}
             />
 
-            <Tab.Screen name="Perfil" component={PerfilStack}
-            options={{
-                tabBarButton: (props) => null, 
-            }}
-            />
+            
         </Tab.Navigator>
     )
 }
@@ -83,7 +79,9 @@ function PerfilStack(){
             headerShown: false
         }}
         >
-            <Stack.Screen name="Perfill" component={Perfil} />
+            <Stack.Screen name="Pesquisaa" component={Pesquisa} />
+
+            <Stack.Screen name="Perfil" component={Perfil} />
 
             <Stack.Screen name="Servico" component={Servico} />
 

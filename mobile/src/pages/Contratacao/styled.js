@@ -83,4 +83,16 @@ export const SubtextoPrimario = styled.Text`
     color: #5C5C5C;
 `;
 
+export const OpcaoModal = styled.Text`
+    padding: 13px;
+    font-size: 14px;
+`;
+ 
+export const TituloModal = styled.Text`
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: left;
+    font-size: 16px;
+`;
+
 
