@@ -11,6 +11,7 @@ import Servico from "../pages/Servico";
 import Contratacao from "../pages/Contratacao";
 import Pedido from "../pages/Pedido";
 import Chat from "../pages/Chat";
+import Contratado from "../pages/Contratado";
 
 
 export default function AppRoutes(props){
@@ -86,6 +87,8 @@ function PerfilStack(){
             <Stack.Screen name="Servico" component={Servico} />
 
             <Stack.Screen name="Contratacao" component={Contratacao} />
+
+            <Stack.Screen name="Contratado" component={Contratado} />
         </Stack.Navigator>
     )
 }

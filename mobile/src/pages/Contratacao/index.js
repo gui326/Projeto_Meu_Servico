@@ -143,7 +143,9 @@ export default function Contratacao(){
                 </View>
 
                 <Button style={{ marginTop: 10 }}>
-                    <ButtonText>
+                    <ButtonText
+                    onPress={() => navigation.navigate('Contratado')}
+                    >
                         Fazer Contratação
                     </ButtonText>
                 </Button>
