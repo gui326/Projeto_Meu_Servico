@@ -13,7 +13,7 @@ export default function Contratado(){
         <SafeAreaView style={{ backgroundColor: 'white', flex: 1 }}>
             <ScrollView
             showsVerticalScrollIndicator={false}
-            style={{ paddingHorizontal: '4%', paddingTop: 40 }}
+            style={{  paddingTop: 40 }}
             >
                 <Image
                 style={{ width: 'auto', height: 345 }}
@@ -24,7 +24,7 @@ export default function Contratado(){
 
                 <Descricao>Aguarde o dia combinado para o serviço ser realizado, e qualquer problema, entre em contato com a gente :D</Descricao>
 
-                <Button style={{ marginTop: 10 }}>
+                <Button style={{ marginHorizontal: '4%', marginTop: 10 }}>
                     <ButtonText
                     onPress={() => navigation.reset({index: 0, routes: [{name: 'Pesquisa'}]})}
                     >

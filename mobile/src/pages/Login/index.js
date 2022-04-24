@@ -26,7 +26,7 @@ export default function Login(){
         style={{ backgroundColor: 'white', flex: 1 }}
         >
             <ScrollView
-            style={{ paddingVertical: 25, paddingHorizontal: 15}}
+            style={{ paddingVertical: 35, paddingHorizontal: 15}}
             showsVerticalScrollIndicator={false}
             >
                 <TouchableNativeFeedback

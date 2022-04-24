@@ -11,7 +11,7 @@ export default function Inicio(){
         >
             <ScrollView
             showsVerticalScrollIndicator={false}
-            style={{ flexDirection: 'column', flex: 1, paddingVertical: 5, paddingHorizontal: 15 }}
+            style={{ flexDirection: 'column', flex: 1, paddingVertical: 30, paddingHorizontal: 15 }}
             >
                 <Image style={{ alignSelf: 'center', marginTop: 35 }} source={require('../../../assets/miniLogo.png')}/>
 

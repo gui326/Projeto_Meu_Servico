@@ -19,6 +19,8 @@ export const Titulo = styled.Text`
     padding-top: 5px;
     padding-bottom: 10px;
     font-size: 22px;
+    max-width: 90%;
+    margin-left: 5%; 
 `;
 
 export const Descricao = styled.Text` 
@@ -26,5 +28,7 @@ export const Descricao = styled.Text`
     padding-bottom: 10px;
     color: grey;
     line-height: 22px;
+    max-width: 90%;
+    margin-left: 5%; 
 `;
 
