@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ScrollView, SafeAreaView, TouchableOpacity, View, ActivityIndicator } from "react-native";
+import { ScrollView, SafeAreaView, TouchableOpacity, View } from "react-native";
 import Header from "../../components/Header";
 import { MaterialIcons } from '@expo/vector-icons';
 import SkeletonContent from 'react-native-skeleton-content';
@@ -16,6 +16,8 @@ export default function Pesquisa(props){
 
     useEffect(() => {
         setLoading(false);
+
+        console.log(props.route.params);
     }, [])
 
     return(

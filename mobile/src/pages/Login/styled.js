@@ -4,7 +4,8 @@ export const Titulo = styled.Text`
     font-weight: 700;
     font-size: 28px;
     color: #e83151;
-    margin: 20px 0;
+    margin-top: 0;
+    margin-bottom: 10px;
 `;
 
 export const Descricao = styled.Text` 

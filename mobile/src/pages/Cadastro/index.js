@@ -28,7 +28,7 @@ export default function Cadastro(){
                 onPress={() => navigation.goBack()}
                 >
                     <View style={{ alignSelf: 'flex-start' }}>
-                        <Ionicons name="arrow-back" size={32} color="#AAAAAA" />
+                        <Ionicons name="arrow-back" size={30} color="#AAAAAA" />
                     </View>
                 </TouchableNativeFeedback>
 

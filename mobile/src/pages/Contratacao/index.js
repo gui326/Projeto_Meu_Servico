@@ -1,4 +1,4 @@
-import { useState } from "react"; 
+import { useState, useEffect } from "react"; 
 import { SafeAreaView, ScrollView, TouchableOpacity, View, Image } from "react-native";
 
 import { AntDesign } from '@expo/vector-icons';
@@ -8,13 +8,19 @@ import { Titulo, Categoria, Button, ButtonText, Topico, ServicoNome,
     ServicoDescricao, TextoPrimario, TextoTotal, Trocar, TituloPrimario, SubtextoPrimario, OpcaoModal, TituloModal } from "./styled";
 import { useNavigation } from "@react-navigation/native";
 import MyModal from "../../components/MyModal";
-
+import { useSelector } from "react-redux";
 
 
 export default function Contratacao(){
     const navigation = useNavigation();
+    const carrinho = useSelector(state => state.carrinho);
     const [modalVisible, setModalVisible] = useState(false);
-    const [pagamento, setPagamento] = useState("dinheiro");
+    const [servicoInfo, setServicoInfo] = useState({});
+
+    useEffect(() => {
+        setServicoInfo(carrinho);
+    }, [])
+    
 
     return(
         <SafeAreaView style={{ backgroundColor: 'white', flex: 1 }}>
@@ -37,10 +43,10 @@ export default function Contratacao(){
                     </View>
                     <View style={{ flex: 8, alignSelf: 'center' }}>
                         <Titulo>
-                            Eletromanik
+                            {servicoInfo.servicoEmpresa}
                         </Titulo>
                         <Categoria>
-                            Eletricista
+                            {servicoInfo.servicoCategoria}
                         </Categoria>
                     </View>
                 </View>
@@ -50,10 +56,10 @@ export default function Contratacao(){
                 </Topico>
 
                 <ServicoNome>
-                    Troca de Lâmpada
+                    {servicoInfo.servicoNome}
                 </ServicoNome>
                 <ServicoDescricao>
-                    Realização da troca de lâmpada da dona de casa
+                    {servicoInfo.servicoDescricao}
                 </ServicoDescricao>
 
                 <Topico style={{ marginTop: 10, marginBottom: 5, borderBottomWidth: 1, borderBottomColor: 'lightgrey' }}>
@@ -116,11 +122,11 @@ export default function Contratacao(){
                     <View style={{ display: 'flex', flexDirection: 'row' }}>
                         <FontAwesome5 
                         style={{ alignSelf: 'center', paddingRight: 13 }}
-                        name={pagamento === "dinheiro" ? "money-bill-alt" :"money-check"} size={19} color="#6B6B6B" />
+                        name={servicoInfo.pagamento === "dinheiro" ? "money-bill-alt" :"money-check"} size={19} color="#6B6B6B" />
 
                         <View style={{ display: 'flex', flexDirection: 'column' }}>
                             <TituloPrimario>
-                                {pagamento === "dinheiro" ? "Dinheiro" : "Cartão"}
+                                {servicoInfo.pagamento === "dinheiro" ? "Dinheiro" : "Cartão"}
                             </TituloPrimario>
                             <SubtextoPrimario>
                                 Pagamento realizado na hora do serviço
@@ -148,14 +154,14 @@ export default function Contratacao(){
                     Selecione o metódo de pagamento
                 </TituloModal>
                 <TouchableOpacity
-                onPress={() => {setPagamento("dinheiro"), setModalVisible(false)}}
+                onPress={() => {setServicoInfo({...servicoInfo, pagamento: "dinheiro"}), setModalVisible(false)}}
                 >
                     <OpcaoModal>
                         Dinheiro
                     </OpcaoModal>
                 </TouchableOpacity>
                 <TouchableOpacity
-                onPress={() => {setPagamento("cartao"), setModalVisible(false)}}
+                onPress={() => {setServicoInfo({...servicoInfo, pagamento: "cartao"}), setModalVisible(false)}}
                 >
                     <OpcaoModal>
                         Cartão de crédito/débito

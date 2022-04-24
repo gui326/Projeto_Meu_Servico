@@ -26,18 +26,18 @@ export default function Login(){
         style={{ backgroundColor: 'white', flex: 1 }}
         >
             <ScrollView
-            style={{ paddingVertical: 45, paddingHorizontal: 15}}
+            style={{ paddingVertical: 25, paddingHorizontal: 15}}
             showsVerticalScrollIndicator={false}
             >
                 <TouchableNativeFeedback
                 onPress={() => navigation.goBack()}
                 >
                     <View style={{ alignSelf: 'flex-start', padding: 10, marginLeft: -10}}>
-                        <Ionicons name="arrow-back" size={32} color="#AAAAAA" />
+                        <Ionicons name="arrow-back" size={30} color="#AAAAAA" />
                     </View>
                 </TouchableNativeFeedback>
 
-                <View style={{ alignSelf: 'center', marginTop: 40, marginBottom: 20 }}>
+                <View style={{ alignSelf: 'center', marginTop: 20, marginBottom: 20 }}>
                     <Image source={require('../../../assets/logo.png')}/>
                     <Logo>
                         Meu{"\n"}Serviço

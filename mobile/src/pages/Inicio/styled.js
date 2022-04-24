@@ -11,8 +11,11 @@ export const Titulo = styled.Text`
 export const Descricao = styled.Text` 
     color: #DBD4D3;
     font-weight: 300;
+    max-width: 80%;
+    margin-left: 10%;
     font-size: 16px;
-    margin-top: 15px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     text-align: center;
 `;
 
@@ -22,7 +25,7 @@ export const Button = styled.TouchableOpacity`
     height: 63px;
     justify-content: center;
     border-radius: 6px;
-    margin-top: 20px;
+    margin-top: 10px;
 `;
 
 export const ButtonText = styled.Text` 
