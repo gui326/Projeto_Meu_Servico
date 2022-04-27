@@ -2,9 +2,12 @@ import { Container } from "@mui/material";
 import { Area, LogoArea, InfoArea, Fixed } from "./styled";
 import SettingsIcon from '@mui/icons-material/Settings';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import { useNavigate } from "react-router-dom";
 
 
 export default function Header(){
+    const navigation = useNavigate();
+
     return(
         <Area>
             <Fixed>
@@ -19,7 +22,9 @@ export default function Header(){
                             <p>R$ 1.200,00</p>
                         </div>
                         <SettingsIcon />
-                        <ExitToAppIcon />
+                        <ExitToAppIcon 
+                        onClick={() => navigation('/')}
+                        />
                     </InfoArea>
                 </Container>
             </Fixed>
