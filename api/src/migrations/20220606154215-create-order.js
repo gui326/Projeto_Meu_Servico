@@ -26,9 +26,6 @@ module.exports = {
       price: {
         type: Sequelize.STRING
       },
-      dayRealize: {
-        type: Sequelize.DATE
-      },
       paymentMethod: {
         type: Sequelize.STRING
       },

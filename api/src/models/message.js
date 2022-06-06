@@ -15,7 +15,6 @@ module.exports = (sequelize, DataTypes) => {
   }
   Message.init({
     isCompany: DataTypes.BOOLEAN,
-    date: DataTypes.DATE,
     content: DataTypes.STRING
   }, {
     sequelize,

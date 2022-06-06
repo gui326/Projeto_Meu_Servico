@@ -16,9 +16,6 @@ module.exports = {
       isCompany: {
         type: Sequelize.BOOLEAN
       },
-      date: {
-        type: Sequelize.DATE
-      },
       content: {
         type: Sequelize.STRING
       },

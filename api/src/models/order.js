@@ -18,7 +18,6 @@ module.exports = (sequelize, DataTypes) => {
   }
   Order.init({
     price: DataTypes.STRING,
-    dayRealize: DataTypes.DATE,
     paymentMethod: DataTypes.STRING,
     status: DataTypes.STRING
   }, {
