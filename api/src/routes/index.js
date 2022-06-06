@@ -1,7 +1,8 @@
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
  
-const client = require('./clientRoute')
-const company = require('./companyRoute')
+const client = require('./clientRoute');
+const company = require('./companyRoute');
+const category = require('./categoryRoute');
 
 
 module.exports = app => {
@@ -9,5 +10,6 @@ module.exports = app => {
     bodyParser.json(),
     client,
     company,
+    category
   )
 }

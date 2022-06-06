@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Client.belongsTo(models.Order);
+      Client.hasOne(models.Order);
     }
   }
   Client.init({

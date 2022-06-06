@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Chat.hasOne(models.Order);
-      Chat.belongsTo(models.Message);
+      Chat.belongsTo(models.Order);
+      Chat.hasOne(models.Message);
     }
   }
   Chat.init({

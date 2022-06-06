@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Point.hasOne(models.Company);
+      Point.belongsTo(models.Company);
     }
   }
   Point.init({
