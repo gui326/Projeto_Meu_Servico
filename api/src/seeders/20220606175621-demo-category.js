@@ -40,6 +40,59 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        id: 7,
+        name: 'Técnico em Informática',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },{
+        id: 8,
+        name: 'Alfaiate',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 9,
+        name: 'Marceneiro',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 10,
+        name: 'Advogado',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 11,
+        name: 'Dentista',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 12,
+        name: 'Professor Inglês',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 13,
+        name: 'Corretor de Imóveis',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 14,
+        name: 'Utilidades para o Lar',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 15,
+        name: 'Manicure',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ], {});
   },
 
