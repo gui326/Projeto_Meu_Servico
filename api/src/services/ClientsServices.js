@@ -1,14 +1,26 @@
 const Services = require('./Services');
 const bcrypt = require("bcrypt");
-const database = require('../models')
+const database = require('../models');
 
 class ClientsServices extends Services{
     constructor(){
         super('Client');
     }
 
-    async handleLogin(){
-        return "ainda não foi realizado";
+    async handleLogin(data){
+        const client = await database[this.modelName].findOne({ where: { email: data.email } });
+
+        if(!client){
+            return null;
+        }
+
+        const teste = await bcrypt.compare(data.password, client.password);
+
+        if(teste){
+            return client;
+        } 
+
+        return null;
     }
 
     async handleRegister(data){

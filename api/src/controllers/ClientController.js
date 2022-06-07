@@ -1,5 +1,6 @@
 const { ClientsServices } = require('../services');
 const clientServices = new ClientsServices();
+const jwt = require('jsonwebtoken');
 
 class ClientController{
 
@@ -15,9 +16,19 @@ class ClientController{
 
     static async clientLogin(req, res){
         try{
-            const login = await clientServices.handleLogin();
+            const client = await clientServices.handleLogin(req.body);
 
-            return res.status(200).json(login);
+            //auth ok
+            if(client){
+                const id = client.id; //esse id viria do banco de dados
+                const token = jwt.sign({ id }, process.env.SECRET, {
+                    expiresIn: 300 // expires in 5min
+                });
+
+                return res.status(200).json({ token: token });
+            }
+
+            return res.status(400).json({ message: 'Email ou password inválidos.' });
         } catch(error){
             return res.status(500).json(error.message);
         }

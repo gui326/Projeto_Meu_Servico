@@ -5,7 +5,7 @@ class OrderController{
     
     static async getAllOrders(req, res){  
         try {
-            const orders = await ordersServices.getAllRegisters();
+            const orders = await ordersServices.getAllRegisters({ clientId: req.clientId });
 
             return res.status(200).json(orders);  
         } catch (error) {
