@@ -8,6 +8,8 @@ import { useDispatch } from "react-redux";
 
 import { logar } from "../../store/modules/users/action";
 
+import api from "../../services/api";
+
 
 export default function Login(){
     const dispatch = useDispatch();
@@ -17,8 +19,32 @@ export default function Login(){
         senha: false
     });
 
-    const handleLogin = () => {
-        dispatch(logar({name: 'teste'}));
+    const handleLogin = async () => {
+        await api
+        .post('/client/login', {"email": "fulano@email.com", "password": "12345"})
+        .then((response) => {
+            console.log(response);
+        })
+        .catch((error) => {
+            if (error.response) {
+                // The request was made and the server responded with a status code
+                // that falls out of the range of 2xx
+                console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.headers);
+              } else if (error.request) {
+                // The request was made but no response was received
+                // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+                // http.ClientRequest in node.js
+                console.log(error.request);
+              } else {
+                // Something happened in setting up the request that triggered an Error
+                console.log('Error', error.message);
+              }
+              console.log(error.config);
+        })
+
+        //dispatch(logar({name: 'teste'}));
     }
 
     return(
