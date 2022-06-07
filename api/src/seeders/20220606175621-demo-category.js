@@ -71,13 +71,13 @@ module.exports = {
       },
       {
         id: 12,
-        name: 'Professor Inglês',
+        name: 'Manicure',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         id: 13,
-        name: 'Corretor de Imóveis',
+        name: 'Imóveis',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -89,7 +89,42 @@ module.exports = {
       },
       {
         id: 15,
-        name: 'Manicure',
+        name: 'Celulares',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      
+      {
+        id: 16,
+        name: 'Computadores e Notebooks',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      
+      {
+        id: 17,
+        name: 'Veículos',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      
+      {
+        id: 18,
+        name: 'Vestuário',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      
+      {
+        id: 19,
+        name: 'Restaurantes',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      
+      {
+        id: 20,
+        name: 'Esporte',
         createdAt: new Date(),
         updatedAt: new Date()
       },
