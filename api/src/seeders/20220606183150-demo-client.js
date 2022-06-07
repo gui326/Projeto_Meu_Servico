@@ -30,6 +30,15 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+        {
+        id: 4,
+        name: 'Grosbilda',
+        password: "$2a$12$Lsbwt/L8B2dJRFPeLfb1POwZ64Zk9Zr3we6fCppRNAWtvKKiiufUm",
+        email: 'orbolato@iftm.edu',
+        phone: '565654444',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
 
     ], {});
   },
