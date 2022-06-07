@@ -13,9 +13,19 @@ class ChatController{
         }
     }
 
-    static async getChats(req, res){  
+    static async getChat(req, res){  
         try {
-            const chat = await chatsServices.getRegister({ where: { id: req.params.id } });
+            const chat = await chatsServices.getRegister({ id: req.params.id });
+
+            return res.status(200).json(chat);  
+        } catch (error) {
+            return res.status(500).json(error.message)
+        }
+    }
+
+    static async createChat(req, res){
+        try {
+            const chat = await chatsServices.createRegister(req.body);
 
             return res.status(200).json(chat);  
         } catch (error) {
@@ -24,10 +34,15 @@ class ChatController{
     }
 
     static async createMessage(req, res){  
-        try {
-            const chat = await chatsServices.createNewMessage({...res.body, chatId: res.params.id});
+        const data = {
+            ...req.body, 
+            ChatId: req.params.id
+        };
 
-            return res.status(200).json(chat);  
+        try {
+            const message = await chatsServices.createNewMessage(data);
+
+            return res.status(200).json(message);  
         } catch (error) {
             return res.status(500).json(error.message)
         }

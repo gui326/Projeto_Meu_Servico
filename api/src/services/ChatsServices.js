@@ -8,6 +8,8 @@ class ChatsServices extends Services{
     }
 
     async createNewMessage(data){
+        console.log(data);
+
         return this.MessagesServices.createRegister(data);
     }
 }

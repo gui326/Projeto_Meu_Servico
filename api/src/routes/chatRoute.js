@@ -5,7 +5,8 @@ const router = Router();
 
 router
 .get('/chat', ChatController.getChats)
-.get('/chat/:id')
-.post('/chat/:id')
+.get('/chat/:id', ChatController.getChat)
+.post('/chat', ChatController.createChat)
+.post('/chat/:id', ChatController.createMessage)
 
 module.exports = router;
