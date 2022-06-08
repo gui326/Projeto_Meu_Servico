@@ -87,7 +87,10 @@ export default function Perfil(props){
                         <TouchableOpacity
                         key={item.id}
                         onPress={() => {
-                            navigation.navigate('Servico')
+                            navigation.navigate('Servico', {
+                                service: {id: item.id, name: item.name, description: item.description, price: item.price},
+                                company: {id: company?.company?.id, name: company?.company?.name, image: company?.company?.image}
+                            })
                         }}
                         >
                             <CardServico item={item}/>

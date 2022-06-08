@@ -56,4 +56,5 @@ export const Descricao = styled.Text`
     font-size: 12px;
     line-height: 14px;
     color: #FFFFFF;
+    text-align: center;
 `;

@@ -37,16 +37,16 @@ export default function Contratacao(){
                 <View style={{ marginTop: 25, display: "flex", flexDirection: 'row' }}>
                     <View style={{ flex: 2, alignSelf: 'center' }}>
                         <Image
-                        style={{ width: 45, height: 45 }}
-                        source={require("../../../assets/miniLogoEmpresa.png")} 
+                        style={{ width: 50, height: 50, borderRadius: 50 }}
+                        source={{uri: servicoInfo.empresaImage}} 
                         />
                     </View>
                     <View style={{ flex: 8, alignSelf: 'center' }}>
                         <Titulo>
-                            {servicoInfo.servicoEmpresa}
+                            {servicoInfo.empresaNome}
                         </Titulo>
                         <Categoria>
-                            {servicoInfo.servicoCategoria}
+                            {servicoInfo.empresaCategoria}
                         </Categoria>
                     </View>
                 </View>
@@ -71,7 +71,7 @@ export default function Contratacao(){
                         Subtotal
                     </TextoPrimario>
                     <TextoPrimario>
-                        R$ 19,99
+                        R$ {servicoInfo.servicoValorFormatado}
                     </TextoPrimario>
                 </View>
 
@@ -80,7 +80,7 @@ export default function Contratacao(){
                         Taxa de serviço
                     </TextoPrimario>
                     <TextoPrimario>
-                        R$ 10,00
+                        R$ {servicoInfo.servicoValor / 10}
                     </TextoPrimario>
                 </View>
 
@@ -89,7 +89,7 @@ export default function Contratacao(){
                         Total
                     </TextoTotal>
                     <TextoTotal>
-                        R$ 29,99
+                        R$ {servicoInfo.servicoValor + (servicoInfo.servicoValor / 10)}
                     </TextoTotal>
                 </View>
 

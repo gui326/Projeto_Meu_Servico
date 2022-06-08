@@ -15,6 +15,7 @@ export const Descricao = styled.Text`
     line-height: 14px;
     color: #707070;
     margin-top: 15px;
+    text-align: center;
 `;
 
 export const Valor = styled.Text` 

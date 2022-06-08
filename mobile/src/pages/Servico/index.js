@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import { SafeAreaView, ScrollView, TouchableOpacity } from "react-native";
 
 import { AntDesign } from '@expo/vector-icons';
@@ -9,19 +11,24 @@ import { useDispatch } from "react-redux";
 import { adicionar_servico } from "../../store/modules/carrinho/actions";
 
 
-export default function Servico(){
+
+export default function Servico(props){
     const navigation = useNavigation();
     const dispatch = useDispatch();
+    const [service, setService] = useState({});
+    const [company, setCompany] = useState({});
 
     const carrinho = () => {
         let dadosCarrinho = {
-            servicoId: 3,
-            servicoEmpresa: "Eletromanik",
-            servicoCategoria: "Eletricista",
-            servicoNome: "Troca de Lâmpada",
-            servicoDescricao: "É feito a troca de lampâda na resiência do cliente. Com total cuidado e segurança, com total respeito as normas previstas.",
-            servicoValor: 19.99,
-            servicoValorFormatado: "R$ 19,99",
+            servicoId: service?.id,
+            empresaId: company?.id,
+            empresaImage: company?.image,
+            empresaNome: company?.name,
+            empresaCategoria: "Eletricista",
+            servicoNome: service?.name,
+            servicoDescricao: service?.description,
+            servicoValor: parseFloat(service?.price),
+            servicoValorFormatado: service?.price,
             pagamento: "dinheiro"
         }
 
@@ -29,6 +36,11 @@ export default function Servico(){
 
         navigation.navigate('Contratacao');
     }
+
+    useEffect(() => {
+        setService(props.route?.params?.service);
+        setCompany(props.route?.params?.company);
+    }, []);
 
     return(
         <SafeAreaView style={{ backgroundColor: 'white', flex: 1 }}>
@@ -43,15 +55,15 @@ export default function Servico(){
                 </TouchableOpacity>
 
                 <Titulo>
-                    Troca de Lampada
+                    {service?.name}
                 </Titulo>
 
                 <Descricao>
-                    É feito a troca de lampâda na resiência do cliente. Com total cuidado e segurança, com total respeito as normas previstas.
+                    {service?.description}
                 </Descricao>
 
                 <Valor>
-                    RS 19,99
+                    R$ {service?.price}
                 </Valor>
 
                 <Button
