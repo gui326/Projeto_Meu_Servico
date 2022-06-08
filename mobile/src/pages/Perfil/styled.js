@@ -29,8 +29,7 @@ export const Titulo = styled.Text`
 
 export const LogoArea = styled.View` 
     align-self: center;
-    background-color: white;
-    border-radius: 50px;
+    border-radius: 50px!important;
     padding: 10px;
 `;
 

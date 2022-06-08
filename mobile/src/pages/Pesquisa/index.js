@@ -134,7 +134,7 @@ export default function Pesquisa(props){
                         {companies?.map((item) => (
                             <TouchableOpacity
                                 key={item.id}
-                                onPress={() => navigation.navigate('Perfil', {Companyid: item.id})}
+                                onPress={() => navigation.navigate('Perfil', {companyId: item.id})}
                             >
                                 <CardPerfil item={item}/>
                             </TouchableOpacity>

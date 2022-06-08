@@ -1,18 +1,18 @@
 import { Background, InfoArea, Titulo, Descricao, ValorArea, Valor } from "./styled";
 
-export default function CardServico(){
+export default function CardServico(props){
     return(
         <Background>
             <InfoArea>
                 <Titulo>
-                    Troca de lampada
+                    {props.item.name}
                 </Titulo>
                 <Descricao>
-                    É feito a troca de lampâda na residência do cliente, com total cuidado e segurança, seguindo as normas.
+                    {props.item.description}
                 </Descricao>
             </InfoArea>
             <ValorArea>
-                <Valor>R$ 19,99</Valor>
+                <Valor>R$ {props.item.price}</Valor>
             </ValorArea>
         </Background>
     )

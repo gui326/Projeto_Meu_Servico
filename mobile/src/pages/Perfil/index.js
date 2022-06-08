@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { SafeAreaView, ScrollView, View, Image, TouchableOpacity } from "react-native";
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -7,10 +8,38 @@ import { Area, Titulo, LogoArea, Categoria, Pontuacao, Descricao, Header } from 
 import CardServico from "../../components/CardServico";
 import { useNavigation } from "@react-navigation/native";
 
+import api from "../../services/api";
+import { useSelector } from "react-redux";
 
-export default function Perfil(){
+
+export default function Perfil(props){
     const navigation = useNavigation();
+    const userData = useSelector(state => state.users);
+    const [loading, setLoading] = useState(false);
+    const [company, setCompany] = useState({});
 
+    const getProfile = async () => {
+        setLoading(true);
+
+        await api
+        .get(`/company/${props.route?.params?.companyId}`, {headers: { authorization: `Bearer ${userData.token}` }})
+        .then((response) => {
+            console.log(response.data);
+            setCompany(response.data);
+        })
+        .catch((error) => {
+            alert(error.response?.data?.message || "Erro");
+        })
+        .finally(() => {
+            setLoading(false);
+        })
+    }
+
+    useEffect(() => {
+        getProfile();
+
+    }, []);
+    
     return(
         <SafeAreaView style={{ backgroundColor: 'white', flex: 1 }}>
             
@@ -22,7 +51,7 @@ export default function Perfil(){
                     <AntDesign name="arrowleft" size={24} color="#DBD4D3" />
                 </TouchableOpacity>
 
-                <Titulo>Eletromanik</Titulo>
+                <Titulo>{company?.company?.name}</Titulo>
             </Header>
             
 
@@ -33,8 +62,8 @@ export default function Perfil(){
                 <Area>
                     <LogoArea>
                         <Image
-                        style={{ width: 50, height: 50 }}
-                        source={require("../../../assets/miniLogoEmpresa.png")} />
+                        style={{ width: 63, height: 63, borderRadius: 50 }}
+                        source={{uri: company?.company?.image || 'https://ui-avatars.com/api/?name=Guilherme+Batista'}} />
                     </LogoArea>
 
                     <View style={{ marginVertical: 12, justifyContent: 'center', display: "flex", flexDirection: "row"}}>
@@ -49,28 +78,21 @@ export default function Perfil(){
                     </View>
 
                     <Descricao>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        {company?.company?.description}
                     </Descricao>
                 </Area>
 
                 <View style={{ marginTop: 10, paddingHorizontal: '4%' }}>
-                    <TouchableOpacity
-                    onPress={() => {
-                        navigation.navigate('Servico')
-                    }}
-                    >
-                        <CardServico />
-                    </TouchableOpacity>
-
-                    <CardServico />
-
-                    <CardServico />
-
-                    <CardServico />
-
-                    <CardServico />
-
-                    <CardServico />
+                    {company?.services?.map((item) => (
+                        <TouchableOpacity
+                        key={item.id}
+                        onPress={() => {
+                            navigation.navigate('Servico')
+                        }}
+                        >
+                            <CardServico item={item}/>
+                        </TouchableOpacity>
+                    ))}
                 </View>
             </ScrollView>
         </SafeAreaView>
