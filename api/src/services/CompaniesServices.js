@@ -16,6 +16,17 @@ class CompaniesServices extends Services{
 
         return newData;
     }
+
+    async getCompanies(filter){
+        return database[this.modelName].findAll({ 
+            include: [
+                {
+                    model: database.Category,
+                }
+            ],
+            where: {filter}
+         })
+    }
 }
 
 module.exports = CompaniesServices;

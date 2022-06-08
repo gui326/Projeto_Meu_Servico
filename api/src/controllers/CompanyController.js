@@ -7,7 +7,7 @@ class CompanyController{
         const filters = req.query.filter ? { categoryId: req.query.filter} : null;
 
         try {
-            const companies = await companiesServices.getAllRegisters(filters);
+            const companies = await companiesServices.getCompanies(filters);
 
             return res.status(200).json(companies);  
         } catch (error) {

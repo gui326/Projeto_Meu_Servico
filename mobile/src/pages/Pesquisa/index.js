@@ -18,6 +18,8 @@ export default function Pesquisa(props){
     const [pesquisa, setPesquisa] = useState(props.route?.params?.pesquisa || "");
     const [loading, setLoading] = useState(false);
 
+    const [companies, setCompanies] = useState([]);
+
     const getCompanies = async () => {
         setLoading(true);
 
@@ -26,7 +28,7 @@ export default function Pesquisa(props){
         await api
         .get('/company', {headers: { authorization: `Bearer ${userData.token}` }})
         .then((response) => {
-            console.log(response.data);
+            setCompanies(response.data);
         })
         .catch((error) => {
             alert(error.response.data.message || error.response.data);
@@ -128,19 +130,13 @@ export default function Pesquisa(props){
 
                 {!loading &&
                     <>
-                        <TouchableOpacity
-                        onPress={() => navigation.navigate('Perfil')}
-                        >
-                            <CardPerfil />
-                        </TouchableOpacity>
-
-                        <CardPerfil />
-
-                        <CardPerfil />
-
-                        <CardPerfil />
-
-                        <CardPerfil />
+                        {companies?.map((item) => (
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate('Perfil')}
+                            >
+                                <CardPerfil item={item}/>
+                            </TouchableOpacity>
+                        ))}
                     </>
                 }
 

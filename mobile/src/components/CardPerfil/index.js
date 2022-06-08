@@ -10,11 +10,11 @@ export default function CardPerfil(props){
     return(
         <Background>
             <LogoArea>
-                <Image style={{ alignSelf: 'center', width: 55, height: 55 }} source={require('../../../assets/logoEmpresa.png')}/>
+                <Image style={{ borderRadius: 50, alignSelf: 'center', width: 55, height: 55 }} source={{uri: props.item.image}}/>
             </LogoArea>
             <InfoArea>
                 <Titulo>
-                    Eletromanik2
+                    {props.item.name}
                 </Titulo>
                 <View style={{ marginVertical: 10, display: "flex", flexDirection: "row" }}>
                     <View style={{ marginRight: 12, display: "flex", flexDirection: "row" }}>
@@ -27,7 +27,7 @@ export default function CardPerfil(props){
                     </View>
                 </View>
                 <Descricao>
-                    Somos uma loja especializada em serviços eletrícos e estamos loucos para te atender.
+                    {props.item.resume}
                 </Descricao>
             </InfoArea>
             <IconArea>
