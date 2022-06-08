@@ -24,13 +24,13 @@ module.exports = {
       },
       {
         id: 4,
-        name: 'Soldador',
+        name: 'Cabelereiro',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         id: 5,
-        name: 'Encanador',
+        name: 'Esportes',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -60,7 +60,7 @@ module.exports = {
       },
       {
         id: 10,
-        name: 'Celulares',
+        name: 'Assitência Celulares',
         createdAt: new Date(),
         updatedAt: new Date()
       },
