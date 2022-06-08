@@ -28,6 +28,7 @@ export default function Pesquisa(props){
         await api
         .get('/company', {headers: { authorization: `Bearer ${userData.token}` }})
         .then((response) => {
+            console.log(response.data);
             setCompanies(response.data);
         })
         .catch((error) => {
@@ -132,7 +133,8 @@ export default function Pesquisa(props){
                     <>
                         {companies?.map((item) => (
                             <TouchableOpacity
-                                onPress={() => navigation.navigate('Perfil')}
+                                key={item.id}
+                                onPress={() => navigation.navigate('Perfil', {Companyid: item.id})}
                             >
                                 <CardPerfil item={item}/>
                             </TouchableOpacity>

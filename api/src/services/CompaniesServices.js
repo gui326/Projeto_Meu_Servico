@@ -20,8 +20,9 @@ class CompaniesServices extends Services{
     async getCompanies(filter){
         return database[this.modelName].findAll({ 
             include: [
-                {
-                    model: database.Category,
+                { 
+                    model: database.Corrector,
+                    attributes: [['name', 'Category']]
                 }
             ],
             where: {filter}

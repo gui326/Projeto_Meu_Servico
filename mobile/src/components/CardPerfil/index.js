@@ -10,7 +10,7 @@ export default function CardPerfil(props){
     return(
         <Background>
             <LogoArea>
-                <Image style={{ borderRadius: 50, alignSelf: 'center', width: 55, height: 55 }} source={{uri: props.item.image}}/>
+                <Image style={{ borderRadius: 50, alignSelf: 'center', width: 55, height: 55 }} source={{uri: props.item.image || 'https://ui-avatars.com/api/?name=Guilherme+Batista'}}/>
             </LogoArea>
             <InfoArea>
                 <Titulo>
