@@ -18,7 +18,7 @@ module.exports = {
         categoryId: 3,
         name: 'ConfeteBeleza',
         resume: 'Bolos para casamento, aniversário, etc',
-        image: '',
+        image: 'http://whyd.com/wp-content/uploads/2022/02/Happy-Birthday-Cake-Images.....jpeg',
         description: 'Satisfação garantida, peça já nosso serviço!',
         createdAt: new Date(),
         updatedAt: new Date()
