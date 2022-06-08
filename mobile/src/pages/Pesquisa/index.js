@@ -7,17 +7,37 @@ import SkeletonContent from 'react-native-skeleton-content';
 import { AreaInput, Input } from "./styled";
 import CardPerfil from "../../components/CardPerfil";
 import { useNavigation } from "@react-navigation/native";
+import { useSelector } from "react-redux";
+
+import api from "../../services/api";
 
 
 export default function Pesquisa(props){
+    const userData = useSelector(state => state.users);
     const navigation = useNavigation();
     const [pesquisa, setPesquisa] = useState(props.route?.params?.pesquisa || "");
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
+
+    const getCompanies = async () => {
+        setLoading(true);
+
+        console.log(userData.token);
+
+        await api
+        .get('/company', {headers: { authorization: `Bearer ${userData.token}` }})
+        .then((response) => {
+            console.log(response.data);
+        })
+        .catch((error) => {
+            alert(error.response.data.message || error.response.data);
+        })
+        .finally(() => {
+            setLoading(false);
+        })
+    }
 
     useEffect(() => {
-        setLoading(false);
-
-        console.log(props.route.params);
+        getCompanies();
     }, [])
 
     return(

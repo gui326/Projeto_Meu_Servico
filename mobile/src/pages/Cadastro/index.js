@@ -6,6 +6,8 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
 
+import api from "../../services/api";
+
 
 export default function Cadastro(){
     const navigation = useNavigation();
@@ -15,6 +17,32 @@ export default function Cadastro(){
         telefone: false,
         senha: false
     });
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleRegister = async () => {
+        const newClient = {
+            "email":  email,
+            "password": password,
+            "phone": phone,
+            "name": name
+        }
+
+        console.log(newClient);
+        if(!newClient.email || !newClient.password || !newClient.phone || !newClient.name) return null;
+
+        await api
+        .post('/client/register', newClient)
+        .then((response) => {
+            console.log(response.data);
+            navigation.navigate('Login');
+        })
+        .catch((error) => {
+            alert(error.response.data.message || error.response.data);
+        })
+    }
 
     return(
         <SafeAreaView
@@ -48,6 +76,8 @@ export default function Cadastro(){
                         <FontAwesome5 name="user" size={18} color={inputAtivo.nome ? '#E83151' : "#AAAAAA"} />
                     </IconArea>
                     <Input 
+                    value={name}
+                    onChangeText={setName}
                     selectionColor={'#E83151'}
                     ativo={inputAtivo.nome}
                     onFocus={() => setInputAtivo({...inputAtivo, nome: true})}
@@ -63,6 +93,8 @@ export default function Cadastro(){
                         <MaterialCommunityIcons name="email-outline" size={20} color={inputAtivo.email ? '#E83151' : "#AAAAAA"} />
                     </IconArea>
                     <Input 
+                    value={email}
+                    onChangeText={setEmail}
                     selectionColor={'#E83151'}
                     ativo={inputAtivo.email}
                     onFocus={() => setInputAtivo({...inputAtivo, email: true})}
@@ -78,6 +110,8 @@ export default function Cadastro(){
                         <MaterialCommunityIcons name="phone-outline" size={20} color={inputAtivo.telefone ? '#E83151' : "#AAAAAA"} />
                     </IconArea>
                     <Input 
+                    value={phone}
+                    onChangeText={setPhone}
                     selectionColor={'#E83151'}
                     ativo={inputAtivo.telefone}
                     onFocus={() => setInputAtivo({...inputAtivo, telefone: true})}
@@ -93,6 +127,8 @@ export default function Cadastro(){
                         <MaterialCommunityIcons name="key-outline" size={20} color={inputAtivo.senha ? '#E83151' : "#AAAAAA"} />
                     </IconArea>
                     <Input 
+                    value={password}
+                    onChangeText={setPassword}
                     selectionColor={'#E83151'}
                     ativo={inputAtivo.senha}
                     onFocus={() => setInputAtivo({...inputAtivo, senha: true})}
@@ -104,7 +140,9 @@ export default function Cadastro(){
                     Ao clicar no botão cadastra-se, você aceita os nossos termos de condições e politíca. 
                 </Info>
 
-                <Button>
+                <Button
+                onPress={() => handleRegister()}
+                >
                     <ButtonText>
                         Cadastrar-se
                     </ButtonText>

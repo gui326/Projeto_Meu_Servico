@@ -19,32 +19,23 @@ export default function Login(){
         senha: false
     });
 
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
     const handleLogin = async () => {
+        if(!email || !password){
+            alert('User and Pass invalid');
+            return null;
+        } 
+
         await api
-        .post('/client/login', {"email": "fulano@email.com", "password": "12345"})
+        .post('/client/login', {"email": email, "password": password})
         .then((response) => {
-            console.log(response);
+            dispatch(logar( {name: 'nãoImplementado', token: response.data.token} ));
         })
         .catch((error) => {
-            if (error.response) {
-                // The request was made and the server responded with a status code
-                // that falls out of the range of 2xx
-                console.log(error.response.data);
-                console.log(error.response.status);
-                console.log(error.response.headers);
-              } else if (error.request) {
-                // The request was made but no response was received
-                // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-                // http.ClientRequest in node.js
-                console.log(error.request);
-              } else {
-                // Something happened in setting up the request that triggered an Error
-                console.log('Error', error.message);
-              }
-              console.log(error.config);
+            alert(error.response.data.message);
         })
-
-        //dispatch(logar({name: 'teste'}));
     }
 
     return(
@@ -86,6 +77,8 @@ export default function Login(){
                         <MaterialCommunityIcons name="email-outline" size={20} color={inputAtivo.email ? '#E83151' : "#AAAAAA"} />
                     </IconArea>
                     <Input 
+                    value={email}
+                    onChangeText={setEmail}
                     selectionColor={'#E83151'}
                     ativo={inputAtivo.email}
                     onFocus={() => setInputAtivo({...inputAtivo, email: true})}
@@ -101,6 +94,8 @@ export default function Login(){
                         <MaterialCommunityIcons name="key-outline" size={20} color={inputAtivo.senha ? '#E83151' : "#AAAAAA"} />
                     </IconArea>
                     <Input 
+                    value={password}
+                    onChangeText={setPassword}
                     selectionColor={'#E83151'}
                     ativo={inputAtivo.senha}
                     onFocus={() => setInputAtivo({...inputAtivo, senha: true})}

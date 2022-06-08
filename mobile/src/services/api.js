@@ -1,11 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: 'https://localhost:3000',
-    headers:{
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Accept': 'application/json'
-    }
+    baseURL: 'http://52.67.58.32:3000',
 })
 
 export default api;
