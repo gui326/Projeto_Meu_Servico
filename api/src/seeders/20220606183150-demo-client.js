@@ -7,7 +7,7 @@ module.exports = {
         id: 1,
         name: 'Enzo Ozne',
         password: "$2a$12$Lsbwt/L8B2dJRFPeLfb1POwZ64Zk9Zr3we6fCppRNAWtvKKiiufUm",
-        email: 'enzoozne@email.com',
+        email: 'gui@hotmail.com',
         phone: '555554444',
         createdAt: new Date(),
         updatedAt: new Date()

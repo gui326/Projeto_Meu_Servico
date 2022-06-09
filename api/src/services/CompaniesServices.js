@@ -22,10 +22,10 @@ class CompaniesServices extends Services{
             include: [
                 { 
                     model: database.Category,
-                    attributes: [['name', 'Category']]
+                    attributes: [['name', 'name']]
                 }
             ],
-            where: {filter}
+            where: filter
          })
     }
 }
