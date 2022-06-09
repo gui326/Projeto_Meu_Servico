@@ -58,7 +58,7 @@ module.exports = {
         categoryId: 5,
         name: 'Bazar boleiro',
         resume: 'Artigos esportivos em geral',
-        image: 'https://www.easywallprints.com/upload/designs/sport-equipment-and-balls-in-front-of-black-background-small-1.jpg',
+        image: 'https://e7.pngegg.com/pngimages/616/840/png-clipart-blue-and-white-soccer-ball-illustration-football-stars-other-emblem.png',
         description: 'Uniformes, bolas, equipamento de rapel, canoagem, paint ball, volleyball, basquete, chuteiras de todas as marcas, artigos novos e usados com garantia. ',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -108,7 +108,7 @@ module.exports = {
         categoryId: 1,
         name: 'EletroService',
         resume: 'Instalações elétricas e Energia Solar',
-        image: '',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKivAyHsK554QcSJYBIWHpdIFGO9Vh10t0KiPBvAh3sYvJnHbdwBzQZpT6l1NnyhNHG_Y&usqp=CAU',
         description: 'Fazemos manutenção de sua rede elétrica, instalação de paineis solares, faça seu orçamento grátis.',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -117,7 +117,7 @@ module.exports = {
         id: 12,
         categoryId: 2,
         name: 'E & C Construções',
-        resume: 'Instalações elétricas e Energia Solar',
+        resume: 'Alvenaria e obras em geral',
         image: 'http://1.bp.blogspot.com/-jYOf5Q7P08U/UaZeSGZyLRI/AAAAAAAAAsY/vsO2fMWTHgE/s1600/escuela+construccion+y+obras+civiles+aiep.1.0-01.jpg',
         description: 'Obras prédiais e residenciais, fazemos reformas e construimos sua casa, mais de 20 anos no mercado.',
         createdAt: new Date(),
@@ -126,10 +126,10 @@ module.exports = {
       {
         id: 13,
         categoryId: 3,
-        name: 'E & C Construções',
-        resume: 'Instalações elétricas e Energia Solar',
+        name: 'Bolos e Confeitos Suzi',
+        resume: 'Confeitaria sob encomenda',
         image: 'http://1.bp.blogspot.com/-jYOf5Q7P08U/UaZeSGZyLRI/AAAAAAAAAsY/vsO2fMWTHgE/s1600/escuela+construccion+y+obras+civiles+aiep.1.0-01.jpg',
-        description: 'Obras prédiais e residenciais, fazemos reformas e construimos sua casa, mais de 20 anos no mercado.',
+        description: 'Bolos deliciosos, docinhos, brigadeiro, e tudo feito com amor e carinho',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -138,7 +138,7 @@ module.exports = {
         categoryId: 4,
         name: 'Hair Gold',
         resume: 'Salão de beleza',
-        image: 'http://1.bp.blogspot.com/-jYOf5Q7P08U/UaZeSGZyLRI/AAAAAAAAAsY/vsO2fMWTHgE/s1600/escuela+construccion+y+obras+civiles+aiep.1.0-01.jpg',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrk93Qe04MgRuyV_3KvL2cbMRuVWtCnGFL3Q&usqp=CAU',
         description: 'Serviço e produtos de qualidade. Atendimento Unissex e Infantil. Buscamos sempre o melhor para nossos clientes',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -168,7 +168,7 @@ module.exports = {
         categoryId: 6,
         name: 'Mechanic Services',
         resume: 'Troca de óleo, pastilhas de freio, suspenção e alinhamento',
-        image: 'https://cdn.awsli.com.br/400x300/1709/1709941/logo/9bfbf88a0d.jpg',
+        image: 'https://www.creativefabrica.com/wp-content/uploads/2021/06/07/Mechanic-logo-design-services-Graphics-13017436-1-1-580x386.png',
         description: 'Uma oficina diferente de tudo o que você já viu. Aqui você tem todos os serviços para seu veículo num único lugar, com a confiança, a qualidade e a tecnologia que se pode oferecer.',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -178,7 +178,7 @@ module.exports = {
         categoryId: 7,
         name: 'Zebu Soluções',
         resume: 'Desenvolvimento de Software',
-        image: 'https://cdn.awsli.com.br/400x300/1709/1709941/logo/9bfbf88a0d.jpg',
+        image: 'https://img.lovepik.com/element/40148/0244.png_860.png',
         description: 'Há mais de uma década, criamos tecnologia em forma de produtos inovadores que melhoram a “developer experience” e geram valor para grandes empresas e startups, capazes de impactar não só o mercado brasileiro, mas o mundo! ',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -186,9 +186,9 @@ module.exports = {
       {
         id: 19,
         categoryId: 8,
-        name: 'MGS Advogados',
+        name: 'MG Advogados',
         resume: 'Escritório full service',
-        image: '',
+        image: 'https://img.freepik.com/vetores-gratis/logotipo-de-consideracao-de-advogado-e-direito_204719-24.jpg',
         description: 'Completamos 50 anos de história em 2020. Ao longo de nossa trajetória pudemos contar com sócios, colaboradores, clientes e parceiros que nos impulsionaram a ser um dos escritórios mais admirados do país. Olhamos para o futuro comprometidos com a inovação e atuação de excelência, tendo no presente a base de nossas realizações.',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -198,7 +198,7 @@ module.exports = {
         categoryId: 9,
         name: 'Giselle Holy',
         resume: 'Manicure e Pedicure',
-        image: 'https://media.istockphoto.com/vectors/vector-logo-design-template-in-linear-style-nail-studio-emblem-vector-id1165085725?k=20&m=1165085725&s=612x612&w=0&h=e3L06_sn8nCuq8pxWMX1JWlM9JTHW3RuMGAZHrLwcaY=',
+        image: 'https://w7.pngwing.com/pngs/874/184/png-transparent-logo-nail-salon-nail-art-fashion-beauty-text-hand-fashion.png',
         description: 'Deixe suas unhas lindas e arrase no seu look, serviço atencioso, higiênico e de qualidade',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -207,7 +207,7 @@ module.exports = {
         id: 21,
         categoryId: 10,
         name: 'UberCelulares',
-        resume: 'reparo de celulares e asseçórios',
+        resume: 'reparo de celulares e acessórios',
         image: 'https://i.pinimg.com/564x/31/01/65/310165bfad10f71b2907e7b3fb02c9b9.jpg',
         description: 'LG,Samsung,Sony,Xiaomi,Motorola,etc',
         createdAt: new Date(),
@@ -218,8 +218,28 @@ module.exports = {
         categoryId: 3,
         name: 'Bolos Maria Maldini',
         resume: 'Bolos de festas e confeitos em geral',
-        image: 'https://i.pinimg.com/564x/31/01/65/310165bfad10f71b2907e7b3fb02c9b9.jpg',
+        image: 'https://thumbs.dreamstime.com/z/cake-logo-vector-ilustration-template-cake-logo-vector-ilustration-122858667.jpg',
         description: 'Bolos para aniversário, casamentos e festas em geral, sob medida, customizados , lindos e deliciosos.',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 23,
+        categoryId: 6,
+        name: 'MotoShopUra',
+        resume: 'Oficina de motos',
+        image: 'https://logopond.com/logos/4fc9f9c3cabd62f0e651c9af774d25f5.png',
+        description: 'Oficina especializada em motos, manutenção preventiva, troca de oleo, freios, eletrica, cuidadmos desde sua 150 até sua Harley ',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 24,
+        categoryId: 4,
+        name: 'Salão da Alice',
+        resume: 'Cabelereira feminina',
+        image: 'https://thumbs.dreamstime.com/z/cake-logo-vector-ilustration-template-cake-logo-vector-ilustration-122858667.jpg',
+        description: 'Cortes de alto padrão, cabelereira experiente e inovadora , a melhor da região',
         createdAt: new Date(),
         updatedAt: new Date()
       },
