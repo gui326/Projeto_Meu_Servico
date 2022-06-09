@@ -50,7 +50,7 @@ export default function Chats(){
                         key={item.id}
                         onPress={() => navigation.navigate('Chat')}
                         >
-                            <CardChat />
+                            <CardChat item={item}/>
                         </TouchableOpacity>
                     ))
                     :

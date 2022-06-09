@@ -5,21 +5,21 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { Background, LogoArea, InfoArea, Titulo, Tipo, Ultima, IconArea } from "./styled";
 
 
-export default function CardChat(){
+export default function CardChat({item}){
     return(
         <Background>
             <LogoArea>
-                <Image source={require("../../../assets/miniLogoEmpresa.png")} style={{ width: 45, height: 45 }}/>
+                <Image source={{ uri: item.Order.Company.image }} style={{ width: 45, height: 45, borderRadius: 50 }}/>
             </LogoArea>
             <InfoArea>
                 <Titulo>
-                    Eletromanik
+                    {item.Order.Company.name}
                 </Titulo>
                 <Tipo>
-                    Pedido
+                    {item.status}
                 </Tipo>
                 <Ultima>
-                    ultima mensagem 20/03/2022 19:47
+                    ultima mensagem {item.createdAt}
                 </Ultima>
             </InfoArea>
             <IconArea>

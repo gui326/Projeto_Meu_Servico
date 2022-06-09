@@ -69,7 +69,7 @@ export default function Perfil(props){
                     <View style={{ marginTop: 0, marginBottom: 10, justifyContent: 'center', display: "flex", flexDirection: "row"}}>
                         <View style={{ marginRight: 15, display: "flex", flexDirection: 'row' }}>
                             <MaterialCommunityIcons name="tag-text-outline" size={18} color="black" />
-                            <Categoria>Eletricista</Categoria>
+                            <Categoria>{company?.company?.Category.name}</Categoria>
                         </View>
                         <View style={{ display: "flex", flexDirection: 'row' }}>
                             <AntDesign name="star" size={18} color="#E9E133" />

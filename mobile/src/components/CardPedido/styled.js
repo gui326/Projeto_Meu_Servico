@@ -31,7 +31,7 @@ export const Info = styled.Text`
     font-weight: 500;
     font-size: 14px;
     color: #483C3C;
-    margin-left: 10px;
+    margin-left: 13px;
 `;
 
 export const Servico = styled.Text` 
