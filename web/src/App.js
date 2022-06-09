@@ -39,7 +39,7 @@ export default function App() {
 function RequireAuth(props) {
   const user = useSelector(state => state.users);
 
-  if (!user) {
+  if (user) {
     return <Navigate to="/" replace />;
   }
 
@@ -49,7 +49,7 @@ function RequireAuth(props) {
 function LoginAuth(props) {
   const user = useSelector(state => state.users);
 
-  if (user) {
+  if (!user) {
     return <Navigate to="/" replace />;
   }
 
