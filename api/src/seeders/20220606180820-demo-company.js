@@ -58,7 +58,7 @@ module.exports = {
         categoryId: 5,
         name: 'Bazar boleiro',
         resume: 'Artigos esportivos em geral',
-        image: 'https://www.easywallprints.com/upload/designs/sport-equipment-and-balls-in-front-of-black-background-small-1.jpg',
+        image: 'https://e7.pngegg.com/pngimages/616/840/png-clipart-blue-and-white-soccer-ball-illustration-football-stars-other-emblem.png',
         description: 'Uniformes, bolas, equipamento de rapel, canoagem, paint ball, volleyball, basquete, chuteiras de todas as marcas, artigos novos e usados com garantia. ',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -207,7 +207,7 @@ module.exports = {
         id: 21,
         categoryId: 10,
         name: 'UberCelulares',
-        resume: 'reparo de celulares e asseçórios',
+        resume: 'reparo de celulares e acessórios',
         image: 'https://i.pinimg.com/564x/31/01/65/310165bfad10f71b2907e7b3fb02c9b9.jpg',
         description: 'LG,Samsung,Sony,Xiaomi,Motorola,etc',
         createdAt: new Date(),
