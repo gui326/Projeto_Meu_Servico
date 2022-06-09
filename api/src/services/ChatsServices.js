@@ -1,5 +1,6 @@
 const Services = require('./Services');
 const MessagesServices = require('./MessagesServices');
+const database = require('../models');
 
 class ChatsServices extends Services{
     constructor(){
@@ -18,7 +19,6 @@ class ChatsServices extends Services{
             include: [
                 { 
                     model: database.Order,
-                    attributes: [['name', 'name']],
                     include: [
                         {
                             model: database.Company,

@@ -4,14 +4,8 @@ const companiesServices = new CompaniesServices();
 class CompanyController{
 
     static async getAllCompanies(req, res){  
-        let filter = {};
-
-        if(req.query.filter){
-            filter = {categoryId: req.query.filter};
-        }
-
         try {
-            const companies = await companiesServices.getCompanies(filter);
+            const companies = await companiesServices.getCompanies(req.query.filter);
 
             return res.status(200).json(companies);  
         } catch (error) {

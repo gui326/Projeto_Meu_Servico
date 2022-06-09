@@ -1,6 +1,10 @@
 const Services = require('./Services');
 const database = require('../models');
+const Sequelize = require('sequelize');
 const ServicesServices = require('./ServicesServices');
+
+const Op = Sequelize.Op;
+
 
 class CompaniesServices extends Services{
     constructor(){
@@ -23,14 +27,20 @@ class CompaniesServices extends Services{
     }
 
     async getCompanies(filter){
+        let search = {};
+
+        if(filter) {
+            search = { name: { [Op.like]: `%${filter}%` } };
+        }
+
         return database[this.modelName].findAll({ 
             include: [
                 { 
                     model: database.Category,
-                    attributes: [['name', 'name']]
+                    attributes: [['name', 'name']],
+                    where: search
                 }
             ],
-            where: filter
          })
     }
 }
