@@ -21,7 +21,7 @@ class CompaniesServices extends Services{
         return database[this.modelName].findAll({ 
             include: [
                 { 
-                    model: database.Corrector,
+                    model: database.Category,
                     attributes: [['name', 'Category']]
                 }
             ],
