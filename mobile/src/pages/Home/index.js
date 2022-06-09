@@ -33,7 +33,7 @@ export default function Home(){
                     showsHorizontalScrollIndicator={false}
                     >
                         <TouchableOpacity
-                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 'Eletricista'})}
+                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 1})}
                         >
                             <Item>
                                 <Title>Eletricista</Title>
@@ -41,7 +41,7 @@ export default function Home(){
                         </TouchableOpacity>
 
                         <TouchableOpacity
-                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 'Pedreiro'})}
+                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 2})}
                         >
                             <Item>
                                 <Title>Pedreiro</Title>
@@ -49,7 +49,7 @@ export default function Home(){
                         </TouchableOpacity>
 
                         <TouchableOpacity
-                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 'Confeiteira'})}
+                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 3})}
                         >
                             <Item>
                                 <Title>Confeiteira</Title>
@@ -57,26 +57,26 @@ export default function Home(){
                         </TouchableOpacity>
 
                         <TouchableOpacity
-                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 'Mecânico'})}
+                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 4})}
+                        >
+                            <Item>
+                                <Title>Cabelereiro</Title>
+                            </Item>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity
+                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 5})}
+                        >
+                            <Item>
+                                <Title>Esportes</Title>
+                            </Item>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity
+                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 6})}
                         >
                             <Item>
                                 <Title>Mecânico</Title>
-                            </Item>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity
-                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 'Soldador'})}
-                        >
-                            <Item>
-                                <Title>Soldador</Title>
-                            </Item>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity
-                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 'Encanador'})}
-                        >
-                            <Item>
-                                <Title>Encanador</Title>
                             </Item>
                         </TouchableOpacity>
                     </ScrollView>

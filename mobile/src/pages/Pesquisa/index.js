@@ -15,7 +15,7 @@ import api from "../../services/api";
 export default function Pesquisa(props){
     const userData = useSelector(state => state.users);
     const navigation = useNavigation();
-    const [pesquisa, setPesquisa] = useState(props.route?.params?.pesquisa || "");
+    const [pesquisa, setPesquisa] = useState("");
     const [loading, setLoading] = useState(false);
 
     const [companies, setCompanies] = useState([]);
@@ -23,12 +23,11 @@ export default function Pesquisa(props){
     const getCompanies = async () => {
         setLoading(true);
 
-        console.log(userData.token);
+        console.log('valor filtro:', props.route?.params?.pesquisa);
 
         await api
-        .get('/company', {headers: { authorization: `Bearer ${userData.token}` }})
+        .get(`/company${pesquisa && '?filter='+pesquisa}`, {headers: { authorization: `Bearer ${userData.token}` }})
         .then((response) => {
-            console.log(response.data);
             setCompanies(response.data);
         })
         .catch((error) => {
@@ -41,6 +40,10 @@ export default function Pesquisa(props){
 
     useEffect(() => {
         getCompanies();
+
+        if(props.route?.params?.pesquisa){
+            setPesquisa(props.route?.params?.pesquisa);
+        }
     }, [])
 
     return(

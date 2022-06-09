@@ -10,7 +10,12 @@ class CompaniesServices extends Services{
 
     async getCompanyAndServices(id){
         const newData =  {
-            company : await database[this.modelName].findOne({ where: { id: Number(id) } }),
+            company : await database[this.modelName].findOne({ include: [
+                { 
+                    model: database.Category,
+                    attributes: [['name', 'name']]
+                }
+            ], where: { id: Number(id) } }),
             services : await this.ServicesServices.getAllRegisters({ companyId: id })
         }
 

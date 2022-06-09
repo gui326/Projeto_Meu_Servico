@@ -19,7 +19,7 @@ export default function CardPerfil(props){
                 <View style={{ marginVertical: 10, display: "flex", flexDirection: "row" }}>
                     <View style={{ marginRight: 12, display: "flex", flexDirection: "row" }}>
                         <MaterialCommunityIcons name="tag-text-outline" size={18} color="#868686" />
-                        <Categoria>Eletricista</Categoria>
+                        <Categoria>{props.item.Category.name}</Categoria>
                     </View>
                     <View style={{ display: "flex", flexDirection: "row" }}>
                         <AntDesign name="star" size={18} color="#E9E133" />
