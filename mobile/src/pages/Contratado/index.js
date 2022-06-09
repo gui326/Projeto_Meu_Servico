@@ -15,12 +15,14 @@ export default function Contratado(){
             showsVerticalScrollIndicator={false}
             style={{  paddingTop: 40 }}
             >
-                <Image
-                style={{ width: 'auto', height: 345 }}
-                source={require("../../../assets/contratado.png")} 
-                />
+                <View style={{ marginHorizontal: 15 }}>
+                    <Image
+                    style={{ width: 'auto', height: 300 }}
+                    source={require("../../../assets/contratado.png")} 
+                    />
+                </View>
 
-                <Titulo>Serviço Foi contratado com sucesso!</Titulo>
+                <Titulo>Serviço foi contratado com sucesso!</Titulo>
 
                 <Descricao>Aguarde o dia combinado para o serviço ser realizado, e qualquer problema, entre em contato com a gente :D</Descricao>
 

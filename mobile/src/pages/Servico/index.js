@@ -46,7 +46,7 @@ export default function Servico(props){
         <SafeAreaView style={{ backgroundColor: 'white', flex: 1 }}>
             <ScrollView
             showsVerticalScrollIndicator={false}
-            style={{ paddingHorizontal: '4%', paddingTop: 40 }}
+            style={{ paddingHorizontal: '4%', paddingTop: 45 }}
             >
                 <TouchableOpacity
                 onPress={() => navigation.goBack()}

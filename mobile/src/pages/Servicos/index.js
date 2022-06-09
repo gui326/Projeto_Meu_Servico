@@ -50,7 +50,7 @@ export default function Servicos(){
                         key={item.id}
                         onPress={() => navigation.navigate('Pedido')}
                         >
-                            <CardPedido />
+                            <CardPedido item={item}/>
                         </TouchableOpacity>
                     ))
                 :

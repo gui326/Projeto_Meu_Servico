@@ -5,7 +5,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 
-export default function CardPedido(){
+export default function CardPedido(prop){
     return(
         <Background>
             <InfoArea>
@@ -17,11 +17,11 @@ export default function CardPedido(){
                     <FontAwesome5 
                     name="check-circle" size={15} color="#31A91E" />
                     <Info>
-                        Serviço realizado - Serviço #341230
+                        Serviço {prop.item.status} - #{prop.item.id}
                     </Info>
                 </View>
                 <Servico>
-                    - Troca de fiação
+                    - {prop.item.ServiceId}
                 </Servico>
             </InfoArea>
             <IconArea>

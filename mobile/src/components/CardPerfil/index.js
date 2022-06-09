@@ -10,19 +10,19 @@ export default function CardPerfil(props){
     return(
         <Background>
             <LogoArea>
-                <Image style={{ borderRadius: 50, alignSelf: 'center', width: 55, height: 55 }} source={{uri: props.item.image || 'https://ui-avatars.com/api/?name=Guilherme+Batista'}}/>
+                <Image style={{ borderRadius: 50, alignSelf: 'center', width: 58, height: 58 }} source={{uri: props.item.image || 'https://ui-avatars.com/api/?name=Guilherme+Batista'}}/>
             </LogoArea>
             <InfoArea>
                 <Titulo>
                     {props.item.name}
                 </Titulo>
-                <View style={{ marginVertical: 10, display: "flex", flexDirection: "row" }}>
+                <View style={{ marginVertical: 9, display: "flex", flexDirection: "row" }}>
                     <View style={{ marginRight: 12, display: "flex", flexDirection: "row" }}>
-                        <MaterialCommunityIcons name="tag-text-outline" size={18} color="#868686" />
+                        <MaterialCommunityIcons name="tag-text-outline" size={16} color="#868686" />
                         <Categoria>{props.item.Category.name}</Categoria>
                     </View>
                     <View style={{ display: "flex", flexDirection: "row" }}>
-                        <AntDesign name="star" size={18} color="#E9E133" />
+                        <AntDesign name="star" size={16} color="#E9E133" />
                         <Pontuacao>4,5</Pontuacao>
                     </View>
                 </View>

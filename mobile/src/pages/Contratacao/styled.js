@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 export const Titulo = styled.Text` 
     font-weight: 700;
     font-size: 22px;
-    line-height: 21px;
+    padding-bottom: 3px;
     color: #494949;
 `;
 

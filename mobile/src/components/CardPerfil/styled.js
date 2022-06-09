@@ -14,7 +14,7 @@ export const LogoArea = styled.View`
 `;
 
 export const InfoArea = styled.View` 
-    flex: 7;
+    flex: 6;
 `;
 
 export const IconArea = styled.View` 
@@ -43,8 +43,8 @@ export const Pontuacao = styled.Text`
 
 export const Descricao = styled.Text` 
     font-weight: 400;
-    font-size: 10px;
-    line-height: 12px;
+    font-size: 11px;
+    line-height: 15px;
     color: #868686;
 `;
 

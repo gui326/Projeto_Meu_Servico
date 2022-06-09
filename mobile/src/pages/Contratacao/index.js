@@ -26,7 +26,7 @@ export default function Contratacao(){
         <SafeAreaView style={{ backgroundColor: 'white', flex: 1 }}>
             <ScrollView
             showsVerticalScrollIndicator={false}
-            style={{ paddingHorizontal: '4%', paddingTop: 40 }}
+            style={{ paddingHorizontal: '4%', paddingTop: 45 }}
             >
                 <TouchableOpacity
                 onPress={() => navigation.goBack()}
@@ -34,7 +34,7 @@ export default function Contratacao(){
                     <AntDesign name="arrowleft" size={24} color="#DBD4D3" />
                 </TouchableOpacity>
 
-                <View style={{ marginTop: 25, display: "flex", flexDirection: 'row' }}>
+                <View style={{ marginTop: 20, display: "flex", flexDirection: 'row' }}>
                     <View style={{ flex: 2, alignSelf: 'center' }}>
                         <Image
                         style={{ width: 50, height: 50, borderRadius: 50 }}
@@ -51,7 +51,7 @@ export default function Contratacao(){
                     </View>
                 </View>
 
-                <Topico style={{ marginTop: 20, marginBottom: 10, borderBottomWidth: 1, borderBottomColor: 'lightgrey' }}>
+                <Topico style={{ marginTop: 20, marginBottom: 7, borderBottomWidth: 1, borderBottomColor: '#c6c6c670', paddingBottom: 5 }}>
                     Serviço(s)
                 </Topico>
 
@@ -62,7 +62,7 @@ export default function Contratacao(){
                     {servicoInfo.servicoDescricao}
                 </ServicoDescricao>
 
-                <Topico style={{ marginTop: 10, marginBottom: 5, borderBottomWidth: 1, borderBottomColor: 'lightgrey' }}>
+                <Topico style={{ marginTop: 30, marginBottom: 7, borderBottomWidth: 1, borderBottomColor: '#c6c6c670', paddingBottom: 5 }}>
                     Resumo de valores
                 </Topico>
 
@@ -93,7 +93,7 @@ export default function Contratacao(){
                     </TextoTotal>
                 </View>
 
-                <Topico style={{ marginBottom: 15, borderBottomWidth: 1, borderBottomColor: 'lightgrey' }}>
+                <Topico style={{ marginTop: 15, marginBottom: 7, borderBottomWidth: 1, borderBottomColor: '#c6c6c670', paddingBottom: 5 }}>
                     Agendamento
                 </Topico>
 
@@ -114,7 +114,7 @@ export default function Contratacao(){
                     </Trocar>
                 </View>
 
-                <Topico style={{ marginTop: 15, marginBottom: 15, borderBottomWidth: 1, borderBottomColor: 'lightgrey' }}>
+                <Topico style={{ marginTop: 30, marginBottom: 7, borderBottomWidth: 1, borderBottomColor: '#c6c6c670', paddingBottom: 5 }}>
                     Pagamento
                 </Topico>
 
@@ -142,7 +142,7 @@ export default function Contratacao(){
                     </TouchableOpacity>
                 </View>
 
-                <Button style={{ marginTop: 10 }}>
+                <Button style={{ marginTop: 35 }}>
                     <ButtonText
                     onPress={() => navigation.navigate('Contratado')}
                     >

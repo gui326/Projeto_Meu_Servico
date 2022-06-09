@@ -41,7 +41,7 @@ export default function Home(){
                         </TouchableOpacity>
 
                         <TouchableOpacity
-                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 2})}
+                        onPress={() => navigation.navigate('Pesquisa', {"pesquisa": 2})}
                         >
                             <Item>
                                 <Title>Pedreiro</Title>

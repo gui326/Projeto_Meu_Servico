@@ -62,11 +62,11 @@ export default function Perfil(props){
                 <Area>
                     <LogoArea>
                         <Image
-                        style={{ width: 63, height: 63, borderRadius: 50 }}
+                        style={{ width: 82, height: 82, borderRadius: 50 }}
                         source={{uri: company?.company?.image || 'https://ui-avatars.com/api/?name=Guilherme+Batista'}} />
                     </LogoArea>
 
-                    <View style={{ marginVertical: 12, justifyContent: 'center', display: "flex", flexDirection: "row"}}>
+                    <View style={{ marginTop: 0, marginBottom: 10, justifyContent: 'center', display: "flex", flexDirection: "row"}}>
                         <View style={{ marginRight: 15, display: "flex", flexDirection: 'row' }}>
                             <MaterialCommunityIcons name="tag-text-outline" size={18} color="black" />
                             <Categoria>Eletricista</Categoria>

@@ -3,10 +3,9 @@ import styled from "styled-components/native";
 export const Titulo = styled.Text` 
     font-weight: 700;
     font-size: 22px;
-    line-height: 21px;
     text-align: center;
     color: #494949;
-    margin-top: 30px;
+    margin-top: 20px;
 `;
 
 export const Descricao = styled.Text` 

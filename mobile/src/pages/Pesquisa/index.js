@@ -38,6 +38,10 @@ export default function Pesquisa(props){
         })
     }
 
+    const handleSearch = () => {
+        getCompanies();
+    }
+
     useEffect(() => {
         getCompanies();
 
@@ -68,6 +72,7 @@ export default function Pesquisa(props){
                     value={pesquisa}
                     onChangeText={setPesquisa}
                     placeholder="Pesquisa"
+                    onSubmitEditing={() => handleSearch()}
                     selectionColor={'#E83151'}
                     />
                 </AreaInput>

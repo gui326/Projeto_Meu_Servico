@@ -12,6 +12,24 @@ class ChatsServices extends Services{
 
         return this.MessagesServices.createRegister(data);
     }
+
+    async getAllChats(filter){
+        return database[this.modelName].findAll({ 
+            include: [
+                { 
+                    model: database.Order,
+                    attributes: [['name', 'name']],
+                    include: [
+                        {
+                            model: database.Company,
+                            attributes: [['name', 'name'], ['image', 'image']]
+                        }
+                    ]
+                },
+            ],
+            where: filter
+        })
+    }
 }
 
 module.exports = ChatsServices;

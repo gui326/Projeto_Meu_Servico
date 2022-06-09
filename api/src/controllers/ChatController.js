@@ -5,7 +5,7 @@ class ChatController{
 
     static async getChats(req, res){  
         try {
-            const chat = await chatsServices.getAllRegisters({ orderId: req.clientId });
+            const chat = await chatsServices.getAllChats({ orderId: req.clientId });
 
             return res.status(200).json(chat);  
         } catch (error) {
