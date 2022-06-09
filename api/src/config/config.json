@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "root",
+    "username": "meuservico_user",
     "password": "12345",
     "database": "meuservico",
     "host": "127.0.0.1",
