@@ -27,6 +27,38 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        id: 4,
+        companyId: 1,
+        rate: 5,
+        comentary: 'Simplemeste a melhor',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 5,
+        companyId: 1,
+        rate: 5,
+        comentary: 'Excelente',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 6,
+        companyId: 2,
+        rate: 4,
+        comentary: 'Gostei',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 7,
+        companyId: 1,
+        rate: 5,
+        comentary: 'Muito bom',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
 
     ], {});
   },
