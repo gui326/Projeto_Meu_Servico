@@ -59,7 +59,7 @@ module.exports = {
         name: 'Bazar boleiro',
         resume: 'Artigos esportivos em geral',
         image: 'https://e7.pngegg.com/pngimages/616/840/png-clipart-blue-and-white-soccer-ball-illustration-football-stars-other-emblem.png',
-        description: 'Uniformes, bolas, equipamento de rapel, canoagem, paint ball, volleyball, basquete, chuteiras de todas as marcas, artigos novos e usados com garantia. ',
+        description: 'Uniformes, bolas, equipamento de rapel, canoagem, volleyball, basquete, chuteiras de todas as marcas, artigos novos e usados com garantia. ',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -67,7 +67,7 @@ module.exports = {
         id: 7,
         categoryId: 7,
         name: 'Joel Guttemberg',
-        resume: 'Serviçõs de Informática',
+        resume: 'Serviços de Informática',
         image: 'http://clipart-library.com/images/8i6oojBXT.png',
         description: 'Formatação, limpeza, montagem, manutenção em computadores e notebooks',
         createdAt: new Date(),
