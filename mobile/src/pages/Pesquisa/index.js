@@ -16,14 +16,12 @@ export default function Pesquisa(props){
     const userData = useSelector(state => state.users);
     const navigation = useNavigation();
     const [pesquisa, setPesquisa] = useState("");
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     const [companies, setCompanies] = useState([]);
 
     const getCompanies = async () => {
         setLoading(true);
-
-        console.log('valor filtro:', props.route?.params?.pesquisa);
 
         await api
         .get(`/company${pesquisa && '?filter='+pesquisa}`, {headers: { authorization: `Bearer ${userData.token}` }})

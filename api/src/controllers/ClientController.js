@@ -21,9 +21,7 @@ class ClientController{
             //auth ok
             if(client){
                 const id = client.id; //esse id viria do banco de dados
-                const token = jwt.sign({ id }, process.env.SECRET, {
-                    expiresIn: 300000 // expires in 5min
-                });
+                const token = jwt.sign({ id }, process.env.SECRET);
 
                 return res.status(200).json({ token: token });
             }

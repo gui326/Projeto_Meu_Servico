@@ -39,6 +39,8 @@ class ChatController{
             ChatId: req.params.id
         };
 
+        console.log(data);
+
         try {
             const message = await chatsServices.createNewMessage(data);
 

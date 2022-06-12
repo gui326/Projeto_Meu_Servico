@@ -15,11 +15,16 @@ class ChatsServices extends Services{
     }
 
     async getChatMessages(id){
-        console.log(id);
-
         const messages = await database['Message'].findAll({ where: { chatId: id } });
 
-        console.log(messages);
+        for(let i = 0; i < messages.length; i++){
+            let month = messages[i].dataValues.createdAt.getMonth() + 1;
+            let day = messages[i].dataValues.createdAt.getDay();
+            let year = messages[i].dataValues.createdAt.getFullYear();
+
+            console.log('ok', messages[i].createdAt);
+            messages[i].dataValues.createdAt = `${day > 10 ? day : "0"+day }/${ month > 10 ? month : "0"+month}/${year}`;
+        }
 
         const chat = await database[this.modelName].findOne({ 
             include: [
@@ -37,9 +42,8 @@ class ChatsServices extends Services{
                     ]
                 },
             ],
-            where: { id: id } });
-
-        console.log(messages);
+            where: { id: id } 
+        });
 
         return {
             messages: messages,
@@ -49,6 +53,7 @@ class ChatsServices extends Services{
 
     async getAllChats(filter){
         return database[this.modelName].findAll({ 
+            order: [["id","DESC"]],
             include: [
                 { 
                     model: database.Order,

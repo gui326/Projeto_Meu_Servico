@@ -10,16 +10,18 @@ import { useNavigation } from "@react-navigation/native";
 
 import api from "../../services/api";
 import { useSelector } from "react-redux";
+import LoadingFull from "../../components/LoadingFull";
 
 
 export default function Perfil(props){
     const navigation = useNavigation();
     const userData = useSelector(state => state.users);
-    const [loading, setLoading] = useState(false);
     const [company, setCompany] = useState({});
 
+    const [loadingFull, setLoadingFull] = useState(false);
+
     const getProfile = async () => {
-        setLoading(true);
+        setLoadingFull(true);
 
         await api
         .get(`/company/${props.route?.params?.companyId}`, {headers: { authorization: `Bearer ${userData.token}` }})
@@ -31,7 +33,7 @@ export default function Perfil(props){
             alert(error.response?.data?.message || "Erro");
         })
         .finally(() => {
-            setLoading(false);
+            setLoadingFull(false);
         })
     }
 
@@ -98,6 +100,8 @@ export default function Perfil(props){
                     ))}
                 </View>
             </ScrollView>
+
+            <LoadingFull open={loadingFull}/>
         </SafeAreaView>
     )
 }

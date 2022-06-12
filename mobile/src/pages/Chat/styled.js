@@ -34,15 +34,16 @@ export const MessageChat = styled.View`
     max-width: 60%; 
     background-color: ${props => props.cliente ? "#B15C6B40" : "#F0F0F0"};
     padding: 17px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: ${props => props.cliente ? "0" : "12px"};
-    border-bottom-left-radius: ${props => props.cliente ? "12px" : "0"};
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: ${props => props.cliente ? "0" : "15px"};
+    border-bottom-left-radius: ${props => props.cliente ? "15px" : "0"};
 `;
 
 export const Message = styled.Text` 
     font-size: 14px;
-    color: #101010;
+    line-height: 19px;
+    color: #101010A0;
 `;
 
 export const Data = styled.Text` 

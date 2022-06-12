@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 export const Titulo = styled.Text` 
     font-weight: 700;
     font-size: 22px;
-    line-height: 21px;
+    padding-bottom: 3px;
     color: #494949;
 `;
 
@@ -16,7 +16,7 @@ export const Categoria = styled.Text`
 
 export const Topico = styled.Text` 
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     color: #6B6B6B;
 `;
 

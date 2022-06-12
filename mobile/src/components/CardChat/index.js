@@ -9,7 +9,7 @@ export default function CardChat({item}){
     return(
         <Background>
             <LogoArea>
-                <Image source={{ uri: item.Order.Company.image }} style={{ width: 45, height: 45, borderRadius: 50 }}/>
+                <Image source={{ uri: item.Order.Company.image }} style={{ width: 50, height: 50, borderRadius: 50 }}/>
             </LogoArea>
             <InfoArea>
                 <Titulo>
@@ -19,7 +19,7 @@ export default function CardChat({item}){
                     {item.status}
                 </Tipo>
                 <Ultima>
-                    ultima mensagem {item.createdAt}
+                    ultima mensagem {`${item.createdAt.split('T')[0].split('-')[2]}/${item.createdAt.split('T')[0].split('-')[1]}/${item.createdAt.split('T')[0].split('-')[0]}`}
                 </Ultima>
             </InfoArea>
             <IconArea>

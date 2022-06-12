@@ -31,7 +31,7 @@ class OrderController{
         }
 
         try {
-            const order = await ordersServices.createRegister(newOrder);
+            const order = await ordersServices.createNewOrder(newOrder);
 
             return res.status(200).json(order);  
         } catch (error) {

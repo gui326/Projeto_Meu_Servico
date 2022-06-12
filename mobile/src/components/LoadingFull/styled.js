@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
 export const AreaTotal = styled.View` 
-    background: #000000A0;
+    background: #FFFFFFF0;
     flex: 1;
     position: absolute;
     top: 0;
@@ -14,6 +14,6 @@ export const AreaTotal = styled.View`
 `;
 
 export const TextLoad = styled.Text` 
-    color: white;
-    padding-top: 5px;
+    color: #E83151;
+    padding-top: 10px;
 `;

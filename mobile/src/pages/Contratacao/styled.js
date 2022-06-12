@@ -16,7 +16,7 @@ export const Categoria = styled.Text`
 
 export const Topico = styled.Text` 
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     color: #6B6B6B;
 `;
 

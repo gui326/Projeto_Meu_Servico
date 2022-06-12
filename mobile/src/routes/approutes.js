@@ -49,7 +49,11 @@ export default function AppRoutes(props){
             />
 
             <Tab.Screen name="Servicos" component={PedidoStack}
+            listeners={({ navigation }) => ({
+                blur: () => navigation.setParams({ screen: undefined })
+            })}
             options={{
+                unmountOnBlur: true,
                 tabBarLabel: 'Serviços',
                 tabBarIcon: ({ focused }) => (
                     <Ionicons name="md-list-sharp" size={24} color={focused ? "#E83151" : "#B2ACAB"} />
@@ -58,7 +62,11 @@ export default function AppRoutes(props){
             />
 
             <Tab.Screen name="Chats" component={ChatStack}
+            listeners={({ navigation }) => ({
+                blur: () => navigation.setParams({ screen: undefined })
+            })}
             options={{
+                unmountOnBlur: true,
                 tabBarLabel: 'Chat',
                 tabBarIcon: ({ focused }) => (
                     <Ionicons name="chatbox-outline" size={24} color={focused ? "#E83151" : "#B2ACAB"} />

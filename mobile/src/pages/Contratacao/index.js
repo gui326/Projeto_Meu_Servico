@@ -69,7 +69,7 @@ export default function Contratacao(){
                         source={{uri: servicoInfo.empresaImage}} 
                         />
                     </View>
-                    <View style={{ flex: 8, alignSelf: 'center' }}>
+                    <View style={{ flex: 9, alignSelf: 'center' }}>
                         <Titulo>
                             {servicoInfo.empresaNome}
                         </Titulo>

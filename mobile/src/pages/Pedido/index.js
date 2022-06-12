@@ -6,10 +6,37 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { Titulo, Categoria, Topico, ServicoNome, 
     ServicoDescricao, TextoPrimario, TextoTotal, TituloPrimario, SubtextoPrimario } from "./styled";
 import { useNavigation } from "@react-navigation/native";
+import api from "../../services/api";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
 
-export default function Pedido(){
+export default function Pedido(props){
     const navigation = useNavigation();
+    const [order, setOrder] = useState({});
+    const userData = useSelector(state => state.users);
+
+    const getOrder = async () => {
+        console.log(props.route?.params?.id);
+
+        await api
+        .get(`/order/${props.route?.params?.id}`, {headers: {Authorization: `Bearer ${userData.token}`}})
+        .then((response) => {
+            setOrder(response.data);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+        .finally(() => {
+
+        })
+    }
+
+    useEffect(() => {
+        getOrder();
+
+    }, [])
 
     return(
         <SafeAreaView style={{ backgroundColor: 'white', flex: 1 }}>
@@ -23,35 +50,35 @@ export default function Pedido(){
                     <AntDesign name="arrowleft" size={24} color="#DBD4D3" />
                 </TouchableOpacity>
 
-                <View style={{ marginTop: 25, display: "flex", flexDirection: 'row' }}>
+                <View style={{ marginTop: 20, display: "flex", flexDirection: 'row' }}>
                     <View style={{ flex: 2, alignSelf: 'center' }}>
                         <Image
-                        style={{ width: 45, height: 45 }}
-                        source={require("../../../assets/miniLogoEmpresa.png")} 
+                        style={{ width: 50, height: 50, borderRadius: 50 }}
+                        source={{ uri: order?.Company?.image }} 
                         />
                     </View>
-                    <View style={{ flex: 8, alignSelf: 'center' }}>
+                    <View style={{ flex: 9, alignSelf: 'center' }}>
                         <Titulo>
-                            Eletromanik
+                            {order?.Company?.name}
                         </Titulo>
                         <Categoria>
-                            Eletricista
+                            {order?.Company?.Category?.name}
                         </Categoria>
                     </View>
                 </View>
 
-                <Topico style={{ marginTop: 20, marginBottom: 10, borderBottomWidth: 1, borderBottomColor: 'lightgrey' }}>
+                <Topico style={{ marginTop: 20, marginBottom: 7, borderBottomWidth: 1, borderBottomColor: '#c6c6c670', paddingBottom: 5 }}>
                     Serviço(s)
                 </Topico>
 
                 <ServicoNome>
-                    Troca de Lâmpada
+                    {order?.Service?.name}
                 </ServicoNome>
                 <ServicoDescricao>
-                    Realização da troca de lâmpada da dona de casa
+                    {order?.Service?.description}
                 </ServicoDescricao>
 
-                <Topico style={{ marginTop: 10, marginBottom: 5, borderBottomWidth: 1, borderBottomColor: 'lightgrey' }}>
+                <Topico style={{ marginTop: 30, marginBottom: 7, borderBottomWidth: 1, borderBottomColor: '#c6c6c670', paddingBottom: 5 }}>
                     Resumo de valores
                 </Topico>
 
@@ -60,7 +87,7 @@ export default function Pedido(){
                         Subtotal
                     </TextoPrimario>
                     <TextoPrimario>
-                        R$ 19,99
+                        R$ {order?.Service?.price}
                     </TextoPrimario>
                 </View>
 
@@ -69,7 +96,7 @@ export default function Pedido(){
                         Taxa de serviço
                     </TextoPrimario>
                     <TextoPrimario>
-                        R$ 10,00
+                        R$ {parseFloat(order?.Service?.price) / 10}
                     </TextoPrimario>
                 </View>
 
@@ -78,11 +105,11 @@ export default function Pedido(){
                         Total
                     </TextoTotal>
                     <TextoTotal>
-                        R$ 29,99
+                        R$ {order?.price}
                     </TextoTotal>
                 </View>
 
-                <Topico style={{ marginBottom: 15, borderBottomWidth: 1, borderBottomColor: 'lightgrey' }}>
+                <Topico style={{ marginTop: 20, marginBottom: 7, borderBottomWidth: 1, borderBottomColor: '#c6c6c670', paddingBottom: 5 }}>
                     Agendamento
                 </Topico>
 
@@ -100,7 +127,7 @@ export default function Pedido(){
                 </View>
                     
 
-                <Topico style={{ marginTop: 15, marginBottom: 15, borderBottomWidth: 1, borderBottomColor: 'lightgrey' }}>
+                <Topico style={{ marginTop: 30, marginBottom: 7, borderBottomWidth: 1, borderBottomColor: '#c6c6c670', paddingBottom: 5 }}>
                     Pagamento
                 </Topico>
 
@@ -111,7 +138,7 @@ export default function Pedido(){
 
                     <View style={{ display: 'flex', flexDirection: 'column' }}>
                         <TituloPrimario>
-                            Cartão
+                            {order?.paymentMethod}
                         </TituloPrimario>
                         <SubtextoPrimario>
                             Pagamento realizado na hora do serviço

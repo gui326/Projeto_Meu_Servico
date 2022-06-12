@@ -1,5 +1,5 @@
 import { View, Image } from "react-native";
-import { Background, InfoArea, IconArea, Titulo, Servico, Info } from "./styled";
+import { Background, InfoArea, IconArea, Titulo, Servico, Info, Categoria, Divider } from "./styled";
 
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -10,10 +10,23 @@ export default function CardPedido(prop){
         <Background>
             <InfoArea>
                 <View style={{ display: "flex", flexDirection: "row" }}>
-                    <Image style={{ width: 35, height: 35, borderRadius: 50 }} source={{uri: prop.item.Company.image}} />
-                    <Titulo>{prop.item.Company.name}</Titulo>
+                    <Image style={{ width: 45, height: 45, borderRadius: 50 }} source={{uri: prop.item.Company.image}} />
+                    <View>
+                        <Titulo>
+                            {prop.item.Company.name}
+                        </Titulo>
+                        <Categoria>
+                            {prop.item?.Company?.Category?.name}
+                        </Categoria>
+                    </View>
+                    <IconArea>
+                        <MaterialIcons name="keyboard-arrow-right" size={30} color="#B0A7A7" />
+                    </IconArea>
                 </View>
-                <View style={{ display: "flex", flexDirection: "row", marginVertical: 12, paddingLeft: 8 }}>
+
+                <Divider/>
+
+                <View style={{ display: "flex", flexDirection: "row", marginTop: 12, marginBottom: 8 }}>
                     <FontAwesome5 
                     name="check-circle" size={17} color="#31A91E" />
                     <Info>
@@ -21,12 +34,10 @@ export default function CardPedido(prop){
                     </Info>
                 </View>
                 <Servico>
-                    - {prop.item.ServiceId} {prop.item.Service.name}
+                    - {prop.item.Service.name}
                 </Servico>
             </InfoArea>
-            <IconArea>
-                <MaterialIcons name="keyboard-arrow-right" size={30} color="#B0A7A7" />
-            </IconArea>
+            
         </Background>
     );
 }
