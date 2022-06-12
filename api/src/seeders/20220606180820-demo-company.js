@@ -128,7 +128,7 @@ module.exports = {
         categoryId: 3,
         name: 'Bolos e Confeitos Suzi',
         resume: 'Confeitaria sob encomenda',
-        image: 'http://1.bp.blogspot.com/-jYOf5Q7P08U/UaZeSGZyLRI/AAAAAAAAAsY/vsO2fMWTHgE/s1600/escuela+construccion+y+obras+civiles+aiep.1.0-01.jpg',
+        image: 'https://img.myloview.com.br/adesivos/cake-logo-700-194423718.jpg',
         description: 'Bolos deliciosos, docinhos, brigadeiro, e tudo feito com amor e carinho',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -238,7 +238,7 @@ module.exports = {
         categoryId: 4,
         name: 'Salão da Alice',
         resume: 'Cabelereira feminina',
-        image: 'https://thumbs.dreamstime.com/z/cake-logo-vector-ilustration-template-cake-logo-vector-ilustration-122858667.jpg',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdXjOSS3cL7AUeFw6ZUYZg6OTnMpYbOKYmMA&usqp=CAU',
         description: 'Cortes de alto padrão, cabelereira experiente e inovadora , a melhor da região',
         createdAt: new Date(),
         updatedAt: new Date()
