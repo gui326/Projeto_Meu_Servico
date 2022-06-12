@@ -26,20 +26,22 @@ export default function Chat(){
     ]);
 
     const enviarMensagem = () => {
-        var today = new Date();
+        if(message){
+            var today = new Date();
 
-        var date = `${today.getDate()}/${today.getMonth()+1}/${today.getFullYear()}`;
+            var date = `${today.getDate()}/${today.getMonth()+1}/${today.getFullYear()}`;
 
-        let newMessage = {
-            id: Math.random() + 123,
-            cliente: true,
-            message,
-            data: date
+            let newMessage = {
+                id: Math.random() + 123,
+                cliente: true,
+                message,
+                data: date
+            }
+
+            setMessages([...messages, newMessage]);
+
+            setMessage("");
         }
-
-        setMessages([...messages, newMessage]);
-
-        setMessage("");
     }
 
     return(

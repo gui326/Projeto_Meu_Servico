@@ -4,7 +4,8 @@ export const Titulo = styled.Text`
     font-weight: 700;
     font-size: 28px;
     color: #e83151;
-    margin: 20px 0;
+    margin-top: 12px;
+    margin-bottom: 15px;
 `;
 
 export const Descricao = styled.Text` 
@@ -61,3 +62,4 @@ export const Input = styled.TextInput.attrs(({ativo}) => ({
     padding-left: 35px;
     width: 100%;
 `;
+

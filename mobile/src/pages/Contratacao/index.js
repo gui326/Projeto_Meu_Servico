@@ -9,6 +9,8 @@ import { Titulo, Categoria, Button, ButtonText, Topico, ServicoNome,
 import { useNavigation } from "@react-navigation/native";
 import MyModal from "../../components/MyModal";
 import { useSelector } from "react-redux";
+import api from "../../services/api";
+import LoadingFull from "../../components/LoadingFull";
 
 
 export default function Contratacao(){
@@ -17,10 +19,36 @@ export default function Contratacao(){
     const [modalVisible, setModalVisible] = useState(false);
     const [servicoInfo, setServicoInfo] = useState({});
 
+    const userData = useSelector(state => state.users);
+    const [ loadingFull, setLoadingFull]  = useState(false); 
+    
+
+    const apiOrderService = async () => {
+        setLoadingFull(true);
+
+        const newOrder = {
+            CompanyId: servicoInfo.empresaId,
+            ServiceId: servicoInfo.servicoId,
+            price: servicoInfo.servicoValor + (servicoInfo.servicoValor / 10),
+            paymentMethod: servicoInfo.pagamento
+        }
+
+        await api.post('/order', newOrder, {headers: {Authorization: `Bearer ${userData.token}`}})
+        .then((response) => {
+            console.log(response);
+            navigation.navigate('Contratado');
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+        .finally(() => {
+            setLoadingFull(false);
+        })
+    }
+    
     useEffect(() => {
         setServicoInfo(carrinho);
     }, [])
-    
 
     return(
         <SafeAreaView style={{ backgroundColor: 'white', flex: 1 }}>
@@ -142,9 +170,9 @@ export default function Contratacao(){
                     </TouchableOpacity>
                 </View>
 
-                <Button style={{ marginTop: 35 }}>
+                <Button style={{ marginTop: 25 }}>
                     <ButtonText
-                    onPress={() => navigation.navigate('Contratado')}
+                    onPress={() => apiOrderService()}
                     >
                         Fazer Contratação
                     </ButtonText>
@@ -170,6 +198,8 @@ export default function Contratacao(){
                     </OpcaoModal>
                 </TouchableOpacity>
             </MyModal>
+
+            <LoadingFull open={loadingFull}/>
         </SafeAreaView>
     )
 }

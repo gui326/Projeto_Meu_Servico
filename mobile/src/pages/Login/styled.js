@@ -6,9 +6,11 @@ export const Titulo = styled.Text`
     color: #e83151;
     margin-top: 0;
     margin-bottom: 10px;
+    text-align: center;
 `;
 
 export const Descricao = styled.Text` 
+text-align: center;
     font-size: 16px;
     font-weight: 300;
     color: #6F6F6F;

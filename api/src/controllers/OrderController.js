@@ -15,7 +15,7 @@ class OrderController{
 
     static async getOrder(req, res){
         try {
-            const order = await ordersServices.getRegister({ id: req.params.id });
+            const order = await ordersServices.getOrder(req.params.id);
 
             return res.status(200).json(order);  
         } catch (error) {
@@ -24,8 +24,14 @@ class OrderController{
     }
 
     static async createOrder(req, res){
+        const newOrder = {
+            ...req.body,
+            ClientId: req.clientId,
+            status: "pendente",
+        }
+
         try {
-            const order = await ordersServices.createRegister(req.body);
+            const order = await ordersServices.createRegister(newOrder);
 
             return res.status(200).json(order);  
         } catch (error) {

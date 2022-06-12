@@ -21,6 +21,28 @@ class OrdersServices extends Services{
             where: filter
         })
     }
+
+    async getOrder(orderId){
+        return database[this.modelName].findOne({ 
+            include: [
+                { 
+                    model: database.Service,
+                    attributes: [['name', 'name'], ['description', 'description'], ['price', 'price']]
+                },
+                { 
+                    model: database.Company,
+                    attributes: [['name', 'name'], ['image', 'image']],
+                    include: [
+                        {
+                            model: database.Category,
+                            attributes: [['name', 'name']],
+                        }
+                    ]
+                },
+            ],
+            where: { id: orderId }
+        })
+    }
 }
 
 module.exports = OrdersServices;

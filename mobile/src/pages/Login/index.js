@@ -9,9 +9,15 @@ import { useDispatch } from "react-redux";
 import { logar } from "../../store/modules/users/action";
 
 import api from "../../services/api";
+import LoadingFull from "../../components/LoadingFull";
+import { Controller, useForm } from "react-hook-form";
+import { useRef } from "react";
+import MessageError from "../../components/MessageError";
 
 
 export default function Login(){
+    const { control, handleSubmit, watch, formState: { errors } } = useForm();
+
     const dispatch = useDispatch();
     const navigation = useNavigation();
     const [inputAtivo, setInputAtivo] = useState({
@@ -19,22 +25,23 @@ export default function Login(){
         senha: false
     });
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const inputSenha = useRef();
 
-    const handleLogin = async () => {
-        if(!email || !password){
-            alert('User and Pass invalid');
-            return null;
-        } 
+    const [loadingFull, setLoadingFull] = useState(false);
+
+    const handleLogin = async (data) => {
+        setLoadingFull(true);
 
         await api
-        .post('/client/login', {"email": email, "password": password})
+        .post('/client/login', {"email": data.email, "password": data.password})
         .then((response) => {
             dispatch(logar( {name: 'nãoImplementado', token: response.data.token} ));
         })
         .catch((error) => {
             alert(error.response.data.message);
+        })
+        .finally(() => {
+            setLoadingFull(false);
         })
     }
 
@@ -56,9 +63,6 @@ export default function Login(){
 
                 <View style={{ alignSelf: 'center', marginTop: 20, marginBottom: 20 }}>
                     <Image source={require('../../../assets/logo.png')}/>
-                    <Logo>
-                        Meu{"\n"}Serviço
-                    </Logo>
                 </View>
 
                 <Titulo>
@@ -76,15 +80,32 @@ export default function Login(){
                     <IconArea>
                         <MaterialCommunityIcons name="email-outline" size={20} color={inputAtivo.email ? '#E83151' : "#AAAAAA"} />
                     </IconArea>
-                    <Input 
-                    value={email}
-                    onChangeText={setEmail}
-                    selectionColor={'#E83151'}
-                    ativo={inputAtivo.email}
-                    onFocus={() => setInputAtivo({...inputAtivo, email: true})}
-                    onBlur={() => setInputAtivo({...inputAtivo, email: false})}
+
+                    <Controller
+                    name="email"
+                    control={control}
+                    rules={{ required: true }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <Input 
+                        onBlur={onBlur}
+                        onChangeText={onChange}
+                        keyboardType="email-address"
+                        autoComplete="email"
+                        autoCapitalize='none'
+                        onSubmitEditing={() => inputSenha.current.focus()}
+                        value={value}
+                        onFocus={() => setInputAtivo({senha: false, email: true})}
+                        selectionColor={'#E83151'}
+                        ativo={inputAtivo.email}
+                        />
+                    )}
                     />
+                    
                 </AreaInput>
+
+                {errors.email && 
+                    <MessageError>Campo necessário</MessageError>
+                }
 
                 <Label>
                     Senha
@@ -93,18 +114,33 @@ export default function Login(){
                     <IconArea>
                         <MaterialCommunityIcons name="key-outline" size={20} color={inputAtivo.senha ? '#E83151' : "#AAAAAA"} />
                     </IconArea>
-                    <Input 
-                    value={password}
-                    onChangeText={setPassword}
-                    selectionColor={'#E83151'}
-                    ativo={inputAtivo.senha}
-                    onFocus={() => setInputAtivo({...inputAtivo, senha: true})}
-                    onBlur={() => setInputAtivo({...inputAtivo, senha: false})}
+
+                    <Controller
+                    name="password"
+                    control={control}
+                    rules={{ required: true }}
+                    render={({ field: { onChange, onBlur, value }}) => (
+                        <Input 
+                        onBlur={onBlur}
+                        ref={inputSenha}
+                        onChangeText={onChange}
+                        secureTextEntry={true}
+                        onSubmitEditing={handleSubmit(handleLogin)}
+                        value={value}
+                        selectionColor={'#E83151'}
+                        ativo={inputAtivo.senha}
+                        onFocus={() => setInputAtivo({email: false, senha: true})}
+                        />
+                    )}
                     />
                 </AreaInput>
 
+                {errors.password && 
+                    <MessageError>Campo necessário</MessageError>
+                }
+
                 <Button 
-                onPress={() => handleLogin()}
+                onPress={handleSubmit(handleLogin)}
                 style={{ marginTop: 30 }}>
                     <ButtonText>
                         Login
@@ -115,6 +151,8 @@ export default function Login(){
                     Esqueci a Senha
                 </Text>
             </ScrollView>
+
+            <LoadingFull open={loadingFull} setOpen={setLoadingFull}/>
         </SafeAreaView>
     );
 }

@@ -6,7 +6,11 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
 
+import { Controller, useForm } from "react-hook-form";
+
 import api from "../../services/api";
+import MessageError from "../../components/MessageError";
+import LoadingFull from "../../components/LoadingFull";
 
 
 export default function Cadastro(){
@@ -17,30 +21,31 @@ export default function Cadastro(){
         telefone: false,
         senha: false
     });
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [password, setPassword] = useState("");
 
-    const handleRegister = async () => {
+    const [loadingFull, setLoadingFull] = useState(false);
+
+    const { control, handleSubmit, watch, formState: { errors } } = useForm();
+
+    const handleRegister = async (data) => {
+        setLoadingFull(true);
         const newClient = {
-            "email":  email,
-            "password": password,
-            "phone": phone,
-            "name": name
+            "email":  data.email,
+            "password": data.senha,
+            "phone": data.telefone,
+            "name": data.nome
         }
-
-        console.log(newClient);
-        if(!newClient.email || !newClient.password || !newClient.phone || !newClient.name) return null;
 
         await api
         .post('/client/register', newClient)
-        .then((response) => {
-            console.log(response.data);
+        .then(() => {
+            navigation.popToTop();
             navigation.navigate('Login');
         })
         .catch((error) => {
             alert(error.response.data.message || error.response.data);
+        })
+        .finally(() => {
+            setLoadingFull(false);
         })
     }
 
@@ -75,15 +80,30 @@ export default function Cadastro(){
                     <IconArea>
                         <FontAwesome5 name="user" size={18} color={inputAtivo.nome ? '#E83151' : "#AAAAAA"} />
                     </IconArea>
-                    <Input 
-                    value={name}
-                    onChangeText={setName}
-                    selectionColor={'#E83151'}
-                    ativo={inputAtivo.nome}
-                    onFocus={() => setInputAtivo({...inputAtivo, nome: true})}
-                    onBlur={() => setInputAtivo({...inputAtivo, nome: false})}
+
+                    <Controller
+                    name="nome"
+                    control={control}
+                    rules={{ required: true }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <Input 
+                        onBlur={onBlur}
+                        onChangeText={onChange}
+                        value={value}
+                        onFocus={() => setInputAtivo({
+                            email:  false,
+                            senha: false,
+                            telefone: false,
+                            nome: true
+                        })}
+                        selectionColor={'#E83151'}
+                        ativo={inputAtivo.nome}
+                        />
+                    )}
                     />
                 </AreaInput>
+
+                {errors.nome && <MessageError> Campo necessário </MessageError>}
 
                 <Label>
                     Email
@@ -92,15 +112,33 @@ export default function Cadastro(){
                     <IconArea>
                         <MaterialCommunityIcons name="email-outline" size={20} color={inputAtivo.email ? '#E83151' : "#AAAAAA"} />
                     </IconArea>
-                    <Input 
-                    value={email}
-                    onChangeText={setEmail}
-                    selectionColor={'#E83151'}
-                    ativo={inputAtivo.email}
-                    onFocus={() => setInputAtivo({...inputAtivo, email: true})}
-                    onBlur={() => setInputAtivo({...inputAtivo, email: false})}
+
+                    <Controller
+                    name="email"
+                    control={control}
+                    rules={{ required: true }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <Input 
+                        onBlur={onBlur}
+                        onChangeText={onChange}
+                        value={value}
+                        keyboardType="email-address"
+                        autoComplete="email"
+                        autoCapitalize='none'
+                        onFocus={() => setInputAtivo({
+                            email:  true,
+                            senha: false,
+                            telefone: false,
+                            nome: false
+                        })}
+                        selectionColor={'#E83151'}
+                        ativo={inputAtivo.email}
+                        />
+                    )}
                     />
                 </AreaInput>
+
+                {errors.email && <MessageError> Campo necessário </MessageError>}
 
                 <Label>
                     Telefone
@@ -109,15 +147,31 @@ export default function Cadastro(){
                     <IconArea>
                         <MaterialCommunityIcons name="phone-outline" size={20} color={inputAtivo.telefone ? '#E83151' : "#AAAAAA"} />
                     </IconArea>
-                    <Input 
-                    value={phone}
-                    onChangeText={setPhone}
-                    selectionColor={'#E83151'}
-                    ativo={inputAtivo.telefone}
-                    onFocus={() => setInputAtivo({...inputAtivo, telefone: true})}
-                    onBlur={() => setInputAtivo({...inputAtivo, telefone: false})}
+
+                    <Controller 
+                    name="telefone"
+                    control={control}
+                    rules={{ required: true }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <Input 
+                        onBlur={onBlur}
+                        onChangeText={onChange}
+                        keyboardType="phone-pad"
+                        value={value}
+                        onFocus={() => setInputAtivo({
+                            email:  false,
+                            senha: false,
+                            telefone: true,
+                            nome: false
+                        })}
+                        selectionColor={'#E83151'}
+                        ativo={inputAtivo.telefone}
+                        />
+                    )}
                     />
                 </AreaInput>
+
+                {errors.telefone && <MessageError> Campo necessário </MessageError>}
 
                 <Label>
                     Senha
@@ -126,28 +180,47 @@ export default function Cadastro(){
                     <IconArea>
                         <MaterialCommunityIcons name="key-outline" size={20} color={inputAtivo.senha ? '#E83151' : "#AAAAAA"} />
                     </IconArea>
-                    <Input 
-                    value={password}
-                    onChangeText={setPassword}
-                    selectionColor={'#E83151'}
-                    ativo={inputAtivo.senha}
-                    onFocus={() => setInputAtivo({...inputAtivo, senha: true})}
-                    onBlur={() => setInputAtivo({...inputAtivo, senha: false})}
+                    
+                    <Controller 
+                    name="senha"
+                    control={control}
+                    rules={{ required: true }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <Input 
+                        onBlur={onBlur}
+                        onChangeText={onChange}
+                        value={value}
+                        onSubmitEditing={handleSubmit(handleRegister)}
+                        secureTextEntry={true}
+                        onFocus={() => setInputAtivo({
+                            email:  false,
+                            senha: true,
+                            telefone: false,
+                            nome: false
+                        })}
+                        selectionColor={'#E83151'}
+                        ativo={inputAtivo.senha}
+                        />
+                    )}
                     />
                 </AreaInput>
+
+                {errors.senha && <MessageError> Campo necessário </MessageError>}
 
                 <Info>
                     Ao clicar no botão cadastra-se, você aceita os nossos termos de condições e politíca. 
                 </Info>
 
                 <Button
-                onPress={() => handleRegister()}
+                onPress={handleSubmit(handleRegister)}
                 >
                     <ButtonText>
                         Cadastrar-se
                     </ButtonText>
                 </Button>
             </ScrollView>
+
+            <LoadingFull open={loadingFull}/>
         </SafeAreaView>
     );
 }

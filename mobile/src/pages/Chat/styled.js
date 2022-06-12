@@ -4,8 +4,8 @@ export const Header = styled.View`
     background-color: #E83151;
     display: flex;
     flex-direction: row;
-    padding-top: 6%;
-    padding-bottom: 3%;
+    padding-top: 8%;
+    padding-bottom: 2%;
     padding-left: 2%;
     padding-right: 2%;
 `;
