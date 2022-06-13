@@ -291,6 +291,195 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        id: 33,
+        companyId: 8,
+        price: "99,99",
+        name: 'Conserto leitor de chip',
+        description: 'Defeito em que o clelular não reconhece o chip',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 34,
+        companyId: 8,
+        price: "200,00",
+        name: 'Entrada em novo aparelho',
+        description: 'avaliamos o seu aparelho e aceitamos como parte do pagamento em um novo',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 35,
+        companyId: 9,
+        price: "200,00",
+        name: 'Análise aposentadoria',
+        description: 'Assitência e acompanhamento para aposentadoria',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 36,
+        companyId: 9,
+        price: "400,00",
+        name: 'Cobrança de salários atrasados',
+        description: 'Auxiliamos com seu salário , fgts , férias e bônus que você tenha a receber',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 37,
+        companyId: 9,
+        price: "600,00",
+        name: 'Demissão injusta',
+        description: 'Demissões que você considere injusta, podemos analisar e ajudar',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 38,
+        companyId: 10,
+        price: "60,00",
+        name: 'Mão e pé',
+        description: 'Unhas da mão e pé com agendamento',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 39,
+        companyId: 10,
+        price: "30,00",
+        name: 'Mão',
+        description: 'Unhas da mão com agendamento',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 40,
+        companyId: 10,
+        price: "40,00",
+        name: 'Pé',
+        description: 'Unhas do pé com agendamento',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 42,
+        companyId: 11,
+        price: "550,00",
+        name: 'Instalação painel solar',
+        description: 'Painel 1x2m instalação em sistema pronto',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 41,
+        companyId: 11,
+        price: "5000,00",
+        name: 'Sistema energia solar',
+        description: 'Sistema completo + instalação',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 43,
+        companyId: 11,
+        price: "250,00",
+        name: 'Bateria',
+        description: 'bateria para sistema solar de 100W',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 44,
+        companyId: 12,
+        price: "0,00",
+        name: 'Casa',
+        description: 'Agende uma avaliação para a construção de casa em terreno privado',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 45,
+        companyId: 12,
+        price: "0,00",
+        name: 'Condominio',
+        description: 'Sob contrato para construção de condominios',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 46,
+        companyId: 13,
+        price: "209,99",
+        name: 'Bolo Casamento',
+        description: 'Bolo 10Kg, 4 andares',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 47,
+        companyId: 13,
+        price: "120,99",
+        name: 'Torta Chocolate',
+        description: 'Torta 3Kg, sabor chocolate',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 48,
+        companyId: 13,
+        price: "20,99",
+        name: 'Pote Brigadeiro',
+        description: 'Brigadeiro caseiro delicioso',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 49,
+        companyId: 14,
+        price: "120,00",
+        name: 'Corte Feminino',
+        description: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 50,
+        companyId: 14,
+        price: "60,00",
+        name: 'Corte Masculino',
+        description: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 51,
+        companyId: 14,
+        price: "70,00",
+        name: 'Corte Infantil',
+        description: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 52,
+        companyId: 14,
+        price: "150,00",
+        name: 'Escova',
+        description: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 53,
+        companyId: 15,
+        price: "100,00",
+        name: 'Aulas Judô',
+        description: 'Plano mensal , aulas com professor faixa preta',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
    
       
 
