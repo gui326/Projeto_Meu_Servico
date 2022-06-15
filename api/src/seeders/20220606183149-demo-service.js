@@ -449,7 +449,7 @@ module.exports = {
         companyId: 14,
         price: "60,00",
         name: 'Corte Masculino',
-        description: '',
+        description: 'Corte cabelo masculino',
         createdAt: new Date(),
         updatedAt: new Date()
       },      
@@ -458,7 +458,7 @@ module.exports = {
         companyId: 14,
         price: "70,00",
         name: 'Corte Infantil',
-        description: '',
+        description: 'Corte cabelo infantil',
         createdAt: new Date(),
         updatedAt: new Date()
       },      
@@ -467,7 +467,7 @@ module.exports = {
         companyId: 14,
         price: "150,00",
         name: 'Escova',
-        description: '',
+        description: 'escova cabelo',
         createdAt: new Date(),
         updatedAt: new Date()
       },      
@@ -710,7 +710,7 @@ module.exports = {
         companyId: 22,
         price: "90,00",
         name: 'Bolo de Morango',
-        description: 'Hummmm bolo de morangooo!',
+        description: 'Hummmm bolo de morangooo',
         createdAt: new Date(),
         updatedAt: new Date()
       },
