@@ -562,7 +562,7 @@ module.exports = {
         updatedAt: new Date()
       },      
       {
-        id: 63,
+        id: 99,
         companyId: 18,
         price: "200,00",
         name: 'Sistema simples de caixa',
