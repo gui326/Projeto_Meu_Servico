@@ -43,7 +43,7 @@ export default function Pesquisa(){
                 onChangeText={setPesquisaValue}
                 selectionColor={'#E83151'}
                 onSubmitEditing={() => {
-                    navigation.navigate('Pesquisa', {pesquisa: pesquisaValue})
+                    navigation.navigate('Pesquisa', {screen: 'Buscas', params: { pesquisa: pesquisaValue }})
                 }}
                 />
             </AreaInput>

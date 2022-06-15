@@ -30,17 +30,18 @@ class CompaniesServices extends Services{
         let search = {};
 
         if(filter) {
-            search = { name: { [Op.like]: `%${filter}%` } };
+            search = { "$Category.name$": { [Op.like]: `%${filter}%` } };
         }
 
         return database[this.modelName].findAll({ 
             include: [
                 { 
                     model: database.Category,
+                    require: true,
                     attributes: [['name', 'name']],
-                    where: search
                 }
             ],
+            where: search
          })
     }
 }

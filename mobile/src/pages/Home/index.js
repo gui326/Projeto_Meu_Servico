@@ -33,7 +33,7 @@ export default function Home(){
                     showsHorizontalScrollIndicator={false}
                     >
                         <TouchableOpacity
-                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 1})}
+                        onPress={() => navigation.navigate('Pesquisa', {screen: 'Buscas', params: { pesquisa: "Eletricista" }})}
                         >
                             <Item>
                                 <Title>Eletricista</Title>
@@ -41,7 +41,7 @@ export default function Home(){
                         </TouchableOpacity>
 
                         <TouchableOpacity
-                        onPress={() => navigation.navigate('Pesquisa', {"pesquisa": 2})}
+                        onPress={() => navigation.navigate('Pesquisa', {screen: 'Buscas', params: { pesquisa: "Pedreiro" }})}
                         >
                             <Item>
                                 <Title>Pedreiro</Title>
@@ -49,7 +49,7 @@ export default function Home(){
                         </TouchableOpacity>
 
                         <TouchableOpacity
-                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 3})}
+                        onPress={() => navigation.navigate('Pesquisa', {screen: 'Buscas', params: { pesquisa: "Confeiteira" }})}
                         >
                             <Item>
                                 <Title>Confeiteira</Title>
@@ -57,7 +57,7 @@ export default function Home(){
                         </TouchableOpacity>
 
                         <TouchableOpacity
-                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 4})}
+                        onPress={() => navigation.navigate('Pesquisa', {screen: 'Buscas', params: { pesquisa: "Cabelereiro" }})}
                         >
                             <Item>
                                 <Title>Cabelereiro</Title>
@@ -65,7 +65,7 @@ export default function Home(){
                         </TouchableOpacity>
 
                         <TouchableOpacity
-                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 5})}
+                        onPress={() => navigation.navigate('Pesquisa', {screen: 'Buscas', params: { pesquisa: "Esportes" }})}
                         >
                             <Item>
                                 <Title>Esportes</Title>
@@ -73,7 +73,7 @@ export default function Home(){
                         </TouchableOpacity>
 
                         <TouchableOpacity
-                        onPress={() => navigation.navigate('Pesquisa', {pesquisa: 6})}
+                        onPress={() => navigation.navigate('Pesquisa', {screen: 'Buscas', params: { pesquisa: "Mecânico" }})}
                         >
                             <Item>
                                 <Title>Mecânico</Title>

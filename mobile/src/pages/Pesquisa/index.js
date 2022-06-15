@@ -23,8 +23,13 @@ export default function Pesquisa(props){
     const getCompanies = async () => {
         setLoading(true);
 
+        let paramPesquisa = props.route?.params?.pesquisa;
+        if(paramPesquisa === undefined || paramPesquisa === false){
+            paramPesquisa = "";
+        }
+
         await api
-        .get(`/company${pesquisa && '?filter='+pesquisa}`, {headers: { authorization: `Bearer ${userData.token}` }})
+        .get(`/company${ paramPesquisa && '?filter='+paramPesquisa}`, {headers: { authorization: `Bearer ${userData.token}` }})
         .then((response) => {
             setCompanies(response.data);
         })

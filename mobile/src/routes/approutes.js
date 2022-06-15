@@ -13,6 +13,64 @@ import Pedido from "../pages/Pedido";
 import Chat from "../pages/Chat";
 import Contratado from "../pages/Contratado";
 
+function PerfilStack(){
+    const Stack = createNativeStackNavigator();
+
+    return(
+        <Stack.Navigator
+        screenOptions={{
+            headerShown: false
+        }}
+        >
+            <Stack.Screen name="Buscas" component={Pesquisa} />
+
+            <Stack.Screen name="Perfil" component={Perfil} />
+
+            <Stack.Screen name="Servico" component={Servico} />
+
+            <Stack.Screen name="Contratacao" component={Contratacao} />
+
+            <Stack.Screen name="Contratado" component={Contratado} />
+        </Stack.Navigator>
+    )
+}
+
+function PedidoStack(){
+    const Stack = createNativeStackNavigator();
+
+    return(
+        <Stack.Navigator
+        screenOptions={{
+            headerShown: false
+        }}
+        >
+            <Stack.Screen name="Servicoss" component={Servicos} />
+
+            <Stack.Screen name="Pedido" component={Pedido} />
+        </Stack.Navigator>
+    )
+}
+
+function ChatStack(){
+    const Stack = createNativeStackNavigator();
+
+    return(
+        <Stack.Navigator
+        screenOptions={{
+            headerShown: false
+        }}
+        >
+            <Stack.Screen name="Chatss" component={Chats} />
+
+            <Stack.Screen 
+            options={{
+                tabBarVisible: { display: "none" },
+                tabBarStyle: { display: "none" }
+            }}
+            name="Chat" component={Chat} />
+        </Stack.Navigator>
+    )
+}
 
 export default function AppRoutes(props){
     const Tab = createBottomTabNavigator();
@@ -21,7 +79,6 @@ export default function AppRoutes(props){
         <Tab.Navigator
         backBehavior="history"
         screenOptions={{
-            
             tabBarHideOnKeyboard: true,
             headerShown: false,
             tabBarActiveTintColor: '#E83151',
@@ -76,64 +133,5 @@ export default function AppRoutes(props){
 
             
         </Tab.Navigator>
-    )
-}
-
-function PerfilStack(){
-    const Stack = createNativeStackNavigator();
-
-    return(
-        <Stack.Navigator
-        screenOptions={{
-            headerShown: false
-        }}
-        >
-            <Stack.Screen name="Pesquisaa" component={Pesquisa} />
-
-            <Stack.Screen name="Perfil" component={Perfil} />
-
-            <Stack.Screen name="Servico" component={Servico} />
-
-            <Stack.Screen name="Contratacao" component={Contratacao} />
-
-            <Stack.Screen name="Contratado" component={Contratado} />
-        </Stack.Navigator>
-    )
-}
-
-function PedidoStack(){
-    const Stack = createNativeStackNavigator();
-
-    return(
-        <Stack.Navigator
-        screenOptions={{
-            headerShown: false
-        }}
-        >
-            <Stack.Screen name="Servicoss" component={Servicos} />
-
-            <Stack.Screen name="Pedido" component={Pedido} />
-        </Stack.Navigator>
-    )
-}
-
-function ChatStack(){
-    const Stack = createNativeStackNavigator();
-
-    return(
-        <Stack.Navigator
-        screenOptions={{
-            headerShown: false
-        }}
-        >
-            <Stack.Screen name="Chatss" component={Chats} />
-
-            <Stack.Screen 
-            options={{
-                tabBarVisible: { display: "none" },
-                tabBarStyle: { display: "none" }
-            }}
-            name="Chat" component={Chat} />
-        </Stack.Navigator>
     )
 }
