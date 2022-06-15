@@ -5,7 +5,7 @@ module.exports = {
     await queryInterface.bulkInsert('Services', [
       {
         id: 1,
-        companyId: 1,
+        companyId: 4,
         price: "19,99",
         name: 'Troca lâmpada',
         description: 'Realização da troca da lâmpada na casa do cliente',
@@ -14,7 +14,7 @@ module.exports = {
       },
       {
         id: 2,
-        companyId: 1,
+        companyId: 4,
         price: "719,99",
         name: 'Troca Fiação',
         description: 'Realização da troca da fiação na casa do cliente',
@@ -23,7 +23,7 @@ module.exports = {
       },
       {
         id: 3,
-        companyId: 1,
+        companyId: 4,
         price: "100,00",
         name: 'Avaliação da fiação elétrica',
         description: 'Será realizado uma verificação na casa do cliente, afim de encontrar problemas na fiação',
@@ -50,7 +50,7 @@ module.exports = {
       },
       {
         id: 6,
-        companyId: 1,
+        companyId: 4,
         price: "400,00",
         name: 'Troca Padrão/Disjuntor',
         description: 'Sujeito a avaliação',
@@ -104,16 +104,16 @@ module.exports = {
       },
       {
         id: 12,
-        companyId: 4,
+        companyId: 1,
         price: "160,00",
         name: 'Troca Óleo',
-        description: 'troca oleo para Chevrolet,Fiat,VolksWagen,Ford',
+        description: 'Troca oleo para Chevrolet,Fiat,VolksWagen,Ford',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         id: 13,
-        companyId: 4,
+        companyId: 1,
         price: "300,99",
         name: 'Troca Óleo importados',
         description: 'Nissan,Honda,Audi,BMW,Mercedes,e demais marcas',
@@ -122,46 +122,46 @@ module.exports = {
       },
       {
         id: 14,
-        companyId: 4,
-        price: "550,00",
-        name: 'Amortecedores',
-        description: 'Jogo amortecedores x4',
+        companyId: 1,
+        price: "400,00",
+        name: 'Troca de óleo caminhões',
+        description: 'Troca de óleo para veiculos grandes',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         id: 15,
-        companyId: 4,
-        price: "450,00",
-        name: 'Suspensão',
-        description: 'Suspensão para principais marcas.',
+        companyId: 1,
+        price: "100,00",
+        name: 'Troca de óleo motos',
+        description: 'Troca de óleo para motos e quadriciculos',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         id: 16,
-        companyId: 4,
-        price: "70,00",
-        name: 'Alinhamento',
-        description: 'Alinhamento automatizado rápido e eficaz',
+        companyId: 1,
+        price: "250,00",
+        name: 'Freios veiculos passeio',
+        description: 'Troca das pastilhas e fluido de freio',
         createdAt: new Date(),
         updatedAt: new Date()
       },      
       {
         id: 17,
-        companyId: 4,
-        price: "60,00",
-        name: 'Balanceamento',
-        description: 'Balanceamento rápido, na hora, sem demora',
+        companyId: 1,
+        price: "300,00",
+        name: 'Freios veiculos carga',
+        description: 'Troca das pastilhas e fluido de freio',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         id: 18,
-        companyId: 4,
-        price: "360,00",
-        name: 'Pastilhas de Freio',
-        description: 'troca das pastilhas com troca da filtro de freio',
+        companyId: 1,
+        price: "1500,00",
+        name: 'Óleo do câmbio',
+        description: 'Troca do óleo de cambios CVT',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -473,16 +473,438 @@ module.exports = {
       },      
       {
         id: 53,
-        companyId: 15,
+        companyId: 16,
         price: "100,00",
         name: 'Aulas Judô',
         description: 'Plano mensal , aulas com professor faixa preta',
         createdAt: new Date(),
         updatedAt: new Date()
+      },       
+      {
+        id: 54,
+        companyId: 16,
+        price: "100,00",
+        name: 'Aulas Crossfit',
+        description: 'Plano mensal,com professor dedicado',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },           
+      {
+        id: 55,
+        companyId: 16,
+        price: "120,00",
+        name: 'Academia',
+        description: 'Plano mensal , todos aparelhos liberados, todos os dias da semana',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },      
-   
+      {
+        id: 56,
+        companyId: 15,
+        price: "150,00",
+        name: 'Camisas Futebol',
+        description: 'camisas de times nacionais e internacionais',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 57,
+        companyId: 15,
+        price: "100,00",
+        name: 'Escolinha de futebol',
+        description: 'Matricule seu filho na escolinha de futebol',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 58,
+        companyId: 15,
+        price: "140,00",
+        name: 'Plano torcedor',
+        description: 'Filie se ao plano sócio torcedor de Atlético ou Cruzeiro',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 59,
+        companyId: 17,
+        price: "200,00",
+        name: 'Troca de óleo',
+        description: 'troca de óleo para as principais marcas',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 60,
+        companyId: 17,
+        price: "350,00",
+        name: 'Freios',
+        description: 'troca de pastilhas e fluido de freio',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 61,
+        companyId: 17,
+        price: "300,00",
+        name: 'Suspensão',
+        description: 'Serviço de troca e reparo da suspensão',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 61,
+        companyId: 17,
+        price: "100,00",
+        name: 'Alinhamento',
+        description: 'alinhamento e balanceamento',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 63,
+        companyId: 18,
+        price: "200,00",
+        name: 'Sistema simples de caixa',
+        description: 'Mensalidade',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 62,
+        companyId: 18,
+        price: "3500,00",
+        name: 'Sistema de caixa',
+        description: 'Desenvolvimento e implantação de sistema de caixa',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 63,
+        companyId: 18,
+        price: "100,00",
+        name: 'Assitência técnica',
+        description: 'Assitência remota por team viewer',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 64,
+        companyId: 18,
+        price: "300,00",
+        name: 'Visita técnica',
+        description: 'Assitência no local',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 65,
+        companyId: 19,
+        price: "5000,00",
+        name: 'Área trabalhista',
+        description: 'Assistência juridica em todo o processo',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 66,
+        companyId: 19,
+        price: "8000,00",
+        name: 'Área criminal',
+        description: 'Assistência juridica em todo o processo',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 67,
+        companyId: 19,
+        price: "3000,00",
+        name: 'Área civil',
+        description: 'Assistência juridica em todo o processo',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 68,
+        companyId: 19,
+        price: "4000,00",
+        name: 'Área tributaria',
+        description: 'Assistência juridica em todo o processo',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },      
+      {
+        id: 69,
+        companyId: 20,
+        price: "60,00",
+        name: 'Mãos',
+        description: 'Serviço de manicure com hora marcada',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 70,
+        companyId: 20,
+        price: "65,00",
+        name: 'Pés',
+        description: 'Serviço de pedicure com hora marcada',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 71,
+        companyId: 21,
+        price: "350,00",
+        name: 'Troca de tela',
+        description: 'Troca de tela trincada por uma nova original',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 72,
+        companyId: 21,
+        price: "150,00",
+        name: 'Troca de bateria',
+        description: 'Baterias originais com longa duração',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 73,
+        companyId: 21,
+        price: "200,00",
+        name: 'Recuperação de fotos',
+        description: 'Recuperação de arquivos em aparelho travado',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 76,
+        companyId: 22,
+        price: "100,00",
+        name: 'Bolo de aniversário',
+        description: 'Bolo delicioso, sabor a escolha',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 75,
+        companyId: 22,
+        price: "110,00",
+        name: 'Torta de chocolate',
+        description: 'Torta recheada,com granulado e pdeaços de chocolate',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 74,
+        companyId: 22,
+        price: "2150,00",
+        name: 'Buffet completo',
+        description: 'Buffet completo para festas, bolo, docinhos, balinhas, sorvetes, enfeites',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 77,
+        companyId: 22,
+        price: "90,00",
+        name: 'Bolo de Morango',
+        description: 'Hummmm bolo de morangooo!',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 78,
+        companyId: 23,
+        price: "260,00",
+        name: 'Troca escapamento',
+        description: 'Escapamento original para Yamaha,Honda,Suzuki',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 79,
+        companyId: 23,
+        price: "60,00",
+        name: 'Troca de óleo',
+        description: 'Troca de óleo para motos',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 80,
+        companyId: 23,
+        price: "100,00",
+        name: 'Freios',
+        description: 'Reparo dos freios',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 81,
+        companyId: 24,
+        price: "170,00",
+        name: 'Long bob',
+        description: 'Corte de cabelo tipo long bob',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 82,
+        companyId: 24,
+        price: "180,00",
+        name: 'Médio com franjinha',
+        description: 'Corte de cabelo médio com franjinha',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 83,
+        companyId: 24,
+        price: "150,00",
+        name: 'Repicado',
+        description: 'Corte de cabelo tipo repicado',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 84,
+        companyId: 24,
+        price: "170,00",
+        name: 'Assimétrico',
+        description: 'Corte de cabelo tipo assimétrico',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 85,
+        companyId: 24,
+        price: "165,00",
+        name: 'Pixie cut',
+        description: 'Corte de cabelo tipo pixie cut',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 86,
+        companyId: 1,
+        price: "250,00",
+        name: 'Multimídia',
+        description: 'Configuração e reparos em central multimídia',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 87,
+        companyId: 1,
+        price: "200,00",
+        name: 'Alarme',
+        description: 'Instalação de alarme',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 88,
+        companyId: 1,
+        price: "300,00",
+        name: 'Fárois',
+        description: 'Configuração e reparos em central multimídia',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 89,
+        companyId: 1,
+        price: "3000,00",
+        name: 'Pintura',
+        description: 'Pintura completa, todas as cores',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 90,
+        companyId: 1,
+        price: "1700,00",
+        name: 'Bancos esportivos',
+        description: 'Bancos esportivos diversas marcas',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 91,
+        companyId: 1,
+        price: "150,00",
+        name: 'Corta combustivel',
+        description: 'Chave secreta que corta combustivel',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 92,
+        companyId: 1,
+        price: "2000,00",
+        name: 'Funilária',
+        description: 'Reparo de danos causados por impacto na lataria',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 93,
+        companyId: 1,
+        price: "90,00",
+        name: 'Alinhamento',
+        description: 'Alinhamento automatizado',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 94,
+        companyId: 1,
+        price: "75,00",
+        name: 'Balanceamento',
+        description: 'Balanceamento profissional sem detalhes',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 95,
+        companyId: 1,
+        price: "750,00",
+        name: 'Escapamento esportivo',
+        description: 'Instalação de escapamento esportivo em veiculos compativeis',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 96,
+        companyId: 1,
+        price: "200,00",
+        name: 'Despachante',
+        description: 'Serviço parceiro de despachante',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 97,
+        companyId: 1,
+        price: "650,00",
+        name: 'Vidros',
+        description: 'Instalação de vidros elétricos',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 98,
+        companyId: 1,
+        price: "5000,00",
+        name: 'Seguro privado',
+        description: 'Serviço de seguro parceiro terceirizado com desconto para nossos clientes.',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
       
-
+      
     ], {});
   },
 
