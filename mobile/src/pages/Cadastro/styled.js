@@ -25,7 +25,8 @@ export const Label = styled.Text`
 export const Info = styled.Text` 
     text-align: center;
     color: #6E6E6E;
-    margin: 20px 0;
+    margin-top: 40px;
+    margin-bottom: 20px;;
 `;
 
 export const Button = styled.TouchableOpacity`
