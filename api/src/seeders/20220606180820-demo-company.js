@@ -4,7 +4,7 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.bulkInsert('Companies', [
       {
-        id: 1,
+        id: 4,
         categoryId: 1,
         name: 'Eletromanik',
         resume: 'Instalações elétricas, reparo, manutenção',
@@ -34,7 +34,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        id: 4,
+        id: 1,
         categoryId: 6,
         name: 'Peixoto Veiculos',
         resume: 'amortecedores,freios,suspensão,troca de óleo',
