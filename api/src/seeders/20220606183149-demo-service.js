@@ -553,7 +553,7 @@ module.exports = {
         updatedAt: new Date()
       },      
       {
-        id: 61,
+        id: 100,
         companyId: 17,
         price: "100,00",
         name: 'Alinhamento',
