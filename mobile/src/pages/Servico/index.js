@@ -24,7 +24,7 @@ export default function Servico(props){
             empresaId: company?.id,
             empresaImage: company?.image,
             empresaNome: company?.name,
-            empresaCategoria: "Eletricista",
+            empresaCategoria: company?.category,
             servicoNome: service?.name,
             servicoDescricao: service?.description,
             servicoValor: parseFloat(service?.price),

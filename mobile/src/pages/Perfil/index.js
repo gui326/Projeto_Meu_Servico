@@ -39,6 +39,7 @@ export default function Perfil(props){
 
     useEffect(() => {
         getProfile();
+        console.log('ste');
 
     }, []);
     
@@ -86,12 +87,19 @@ export default function Perfil(props){
 
                 <View style={{ marginTop: 10, paddingHorizontal: '4%' }}>
                     {company?.services?.map((item) => (
+                        console.log('item', item),
+
                         <TouchableOpacity
                         key={item.id}
                         onPress={() => {
                             navigation.navigate('Servico', {
                                 service: {id: item.id, name: item.name, description: item.description, price: item.price},
-                                company: {id: company?.company?.id, name: company?.company?.name, image: company?.company?.image}
+                                company: {
+                                    id: company?.company?.id, 
+                                    name: company?.company?.name, 
+                                    image: company?.company?.image,
+                                    category: company?.company?.Category?.name,
+                                }
                             })
                         }}
                         >

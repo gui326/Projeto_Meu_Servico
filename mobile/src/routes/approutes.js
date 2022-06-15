@@ -12,6 +12,7 @@ import Contratacao from "../pages/Contratacao";
 import Pedido from "../pages/Pedido";
 import Chat from "../pages/Chat";
 import Contratado from "../pages/Contratado";
+import Usuario from "../pages/Usuario";
 
 function PerfilStack(){
     const Stack = createNativeStackNavigator();
@@ -128,6 +129,12 @@ export default function AppRoutes(props){
                 tabBarIcon: ({ focused }) => (
                     <Ionicons name="chatbox-outline" size={24} color={focused ? "#E83151" : "#B2ACAB"} />
                 ),
+            }}
+            />
+
+            <Tab.Screen name="Usuario" component={Usuario}
+            options={{
+                tabBarItemStyle: { display: 'none' },
             }}
             />
 
