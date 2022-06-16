@@ -1,5 +1,6 @@
 :root{
   --main-color: #E83151;
+  --aux-color: #544D4E;
 }
 
 body {
@@ -26,4 +27,25 @@ a{
 
 *{
   box-sizing: border-box;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 6px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: lightgrey; 
 }

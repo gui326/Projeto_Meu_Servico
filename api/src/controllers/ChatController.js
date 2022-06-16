@@ -13,6 +13,16 @@ class ChatController{
         }
     }
 
+    static async getChatsCompany(req, res){  
+        try {
+            const chat = await chatsServices.getAllChatsCompany(req.params.id);
+
+            return res.status(200).json(chat);  
+        } catch (error) {
+            return res.status(500).json(error.message)
+        }
+    }
+
     static async getChat(req, res){  
         try {
             const chat = await chatsServices.getChatMessages(req.params.id);
@@ -38,8 +48,6 @@ class ChatController{
             ...req.body, 
             ChatId: req.params.id
         };
-
-        console.log(data);
 
         try {
             const message = await chatsServices.createNewMessage(data);

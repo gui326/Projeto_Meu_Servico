@@ -7,6 +7,7 @@ const router = Router();
 router
 .get('/chat', authenticate, ChatController.getChats)
 .get('/chat/:id', authenticate, ChatController.getChat)
+.get('/chat/company/:id', authenticate, ChatController.getChatsCompany)
 .post('/chat', authenticate, ChatController.createChat)
 .post('/chat/:id', authenticate, ChatController.createMessage)
 

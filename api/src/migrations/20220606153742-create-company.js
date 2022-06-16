@@ -13,6 +13,12 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: 'Categories', key: 'id'}
       },
+      email: {
+        type: Sequelize.STRING
+      },
+      password: {
+        type: Sequelize.STRING
+      },
       name: {
         type: Sequelize.STRING
       },

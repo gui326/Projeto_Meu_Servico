@@ -1,5 +1,6 @@
 const { CompaniesServices } = require('../services');
 const companiesServices = new CompaniesServices();
+const jwt = require('jsonwebtoken');
 
 class CompanyController{
 
@@ -20,6 +21,24 @@ class CompanyController{
             return res.status(200).json(data);  
         } catch (error) {
             return res.status(500).json(error.message)
+        }
+    }
+
+    static async companyLogin(req, res){
+        try{
+            const company = await companiesServices.handleLogin(req.body);
+
+            //auth ok
+            if(company){
+                const id = company.id; //esse id viria do banco de dados
+                const token = jwt.sign({ id }, process.env.SECRET);
+
+                return res.status(200).json({ token: token, name: company.name, id: company.id });
+            }
+
+            return res.status(400).json({ message: 'Email ou password inválidos.' });
+        } catch(error){
+            return res.status(500).json(error.message);
         }
     }
 

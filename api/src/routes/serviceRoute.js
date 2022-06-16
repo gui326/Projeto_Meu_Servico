@@ -5,6 +5,7 @@ const authenticate = require('../middlewares/authenticate');
 const router = Router();
 
 router
-.get('/service', authenticate, ServiceController.getAllServices);
+.get('/service', authenticate, ServiceController.getAllServices)
+.post('/service', authenticate, ServiceController.createService)
 
 module.exports = router;

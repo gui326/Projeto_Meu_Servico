@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 
 import { useSelector, useDispatch } from "react-redux";
 import { logar } from "./store/modules/users/action";
+import ListServices from "./pages/ListServices";
+import Chats from "./pages/Chats";
 
 
 export default function App() {
@@ -20,17 +22,30 @@ export default function App() {
   return (
     <div className="App">
       <Routes>
-          <Route path="/" element={
-            
+          <Route index path="/" element={
+            <LoginAuth>
               <Login />
-            
+            </LoginAuth>
           } />
 
-          <Route index path="/home" element={
+          <Route path="/home" element={
             <RequireAuth>
               <Home />
             </RequireAuth>
           } />
+
+          <Route path="/servicos" element={
+            <RequireAuth>
+              <ListServices />
+            </RequireAuth>
+          } />
+
+          <Route path="/chats" element={
+            <RequireAuth>
+              <Chats />
+            </RequireAuth>
+          } />
+
       </Routes>
     </div>
   );
@@ -40,18 +55,18 @@ function RequireAuth(props) {
   const user = useSelector(state => state.users);
 
   if (user) {
-    return <Navigate to="/" replace />;
+    return props.children;
   }
 
-  return props.children;
+  return <Navigate to="/" replace />;
 }
 
 function LoginAuth(props) {
   const user = useSelector(state => state.users);
 
   if (!user) {
-    return <Navigate to="/" replace />;
+    return props.children;
   }
 
-  return props.children;
+  return <Navigate to="/home" replace />;
 }

@@ -9,8 +9,6 @@ class ChatsServices extends Services{
     }
 
     async createNewMessage(data){
-        console.log(data);
-
         return this.MessagesServices.createRegister(data);
     }
 
@@ -63,6 +61,29 @@ class ChatsServices extends Services{
                             model: database.Company,
                             attributes: [['name', 'name'], ['image', 'image']]
                         }
+                    ]
+                },
+            ],
+            
+        })
+    }
+
+    async getAllChatsCompany(filter){
+        return database[this.modelName].findAll({ 
+            order: [["id","DESC"]],
+            include: [
+                { 
+                    model: database.Order,
+                    where: { CompanyId: filter },
+                    include: [
+                        {
+                            model: database.Client,
+                            attributes: [['name', 'name']]
+                        },
+                        {
+                            model: database.Service,
+                            attributes: [['name', 'name']]
+                        },
                     ]
                 },
             ],

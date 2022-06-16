@@ -6,7 +6,12 @@ class Services{
     }
 
     async getAllRegisters(where = {}) {
-        return database[this.modelName].findAll({where : { ...where }});
+        return database[this.modelName].findAll(
+            {
+                where : { ...where },
+                order: [['id', 'DESC']]
+            }
+        );
     }
 
     async getRegister(where = {}){
