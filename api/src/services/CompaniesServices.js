@@ -29,6 +29,20 @@ class CompaniesServices extends Services{
         return null;
     }
 
+    async handleRegister(data){
+        const salt = await bcrypt.genSalt(12);
+
+        const newCompany = {
+            ...data,
+            resume: '',
+            description: '',
+            image: '',
+            password: await bcrypt.hash(data.password, salt)
+        }
+
+        return database[this.modelName].create(newCompany);
+    }
+
     async getCompanyAndServices(id){
         const newData =  {
             company : await database[this.modelName].findOne({ include: [

@@ -22,6 +22,26 @@ class ServiceController{
             return res.status(500).json(error.message)
         }
     }
+
+    static async deleteService(req, res){
+        try {
+            const service = await servicesServices.deleteRegister(req.params.id);
+
+            return res.status(200).json(service);  
+        } catch (error) {
+            return res.status(500).json(error.message)
+        }
+    }
+
+    static async updateService(req, res){
+        try {
+            const service = await servicesServices.updateRegister(req.body, req.params.id);
+
+            return res.status(200).json(service);  
+        } catch (error) {
+            return res.status(500).json(error.message)
+        }
+    }
 }
 
 module.exports = ServiceController;

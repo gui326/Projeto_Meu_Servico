@@ -17,7 +17,7 @@ export const Area = styled.div`
 export const Card = styled.div` 
     display: flex;
     flex-direction: column;
-    max-width: 500px;
+    max-width: 380px;
     padding: 1em;
     border-radius: 12px;
 `;

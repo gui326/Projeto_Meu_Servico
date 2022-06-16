@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { logar } from "./store/modules/users/action";
 import ListServices from "./pages/ListServices";
 import Chats from "./pages/Chats";
+import Register from "./pages/Register";
 
 
 export default function App() {
@@ -25,6 +26,12 @@ export default function App() {
           <Route index path="/" element={
             <LoginAuth>
               <Login />
+            </LoginAuth>
+          } />
+
+          <Route index path="/cadastro" element={
+            <LoginAuth>
+              <Register />
             </LoginAuth>
           } />
 

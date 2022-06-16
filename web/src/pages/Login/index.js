@@ -2,7 +2,7 @@ import InputIcon from "../../components/InputIcon";
 import { Area, Titulo, Descricao, BtnPrimary, BtnSecondary, Card } from "./styled";
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import KeyIcon from '@mui/icons-material/Key';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import api from "../../services/api";
@@ -97,9 +97,11 @@ export default function Login(){
                     Login
                 </BtnPrimary>
 
-                <BtnSecondary>
-                    Cadastrar-se
-                </BtnSecondary>
+                <Link to="/cadastro">
+                    <BtnSecondary style={{ width: '100%' }}>
+                        Cadastrar-se
+                    </BtnSecondary>
+                </Link>
             </Card>
 
             <LoadingFull open={loadingFull} setOpen={setLoadingFull} />

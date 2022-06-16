@@ -75,6 +75,12 @@ export default function Chats(){
                             </Grid>
                         ))}
                     </Grid>
+
+                    {chats?.length === 0 &&
+                        <div style={{ textAlign: 'center' }}>
+                            <h5 style={{ color: '#FFFFFF', fontSize: 22 }}>Não foi encontrado nenhum chat</h5>
+                        </div>
+                    }
                 </Container>
 
                 <LoadingFull open={loadingFull} setOpen={setLoadingFull} />

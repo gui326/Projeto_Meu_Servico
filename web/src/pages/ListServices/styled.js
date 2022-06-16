@@ -14,11 +14,17 @@ export const CardArea = styled.div`
 
 export const Card = styled.div` 
     padding: 1em;
-    width: 100%;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 6px;
-    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    :hover{
+        div{
+            display: flex;
+        }
+    }
 
     h3{
         margin: 0;
@@ -41,6 +47,23 @@ export const Card = styled.div`
 
     :hover{
         box-shadow: 0px 4px 4px rgba(0, 0, 0, .7);
+    }
+`;
+
+export const AreaActions = styled.div` 
+    display: none;
+    background: #000000C0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+
+    svg{
+        color: white;
     }
 `;
 

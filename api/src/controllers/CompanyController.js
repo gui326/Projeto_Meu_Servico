@@ -42,6 +42,26 @@ class CompanyController{
         }
     }
 
+    static async companyRegister(req, res){
+        try{
+            const newCompany = await companiesServices.handleRegister(req.body);
+            
+            return res.status(200).json(newCompany);
+        } catch(error){
+            return res.status(500).json(error.message);
+        }
+    }
+
+    static async companyUpdate(req, res){
+        try{
+            const company = await companiesServices.updateRegister(req.body, req.params.id);
+            
+            return res.status(200).json(company);
+        } catch(error){
+            return res.status(500).json(error.message);
+        }
+    }
+
 }
 
 module.exports = CompanyController;

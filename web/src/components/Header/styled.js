@@ -34,16 +34,11 @@ export const LogoArea = styled.div`
 export const InfoArea = styled.div` 
     display: flex;
     align-items: center;
+    gap: 10px;
 
     svg{
         color: white;
-        font-size: 50px;
-        padding-left: .5em;
-        cursor: pointer;
-
-        :hover{
-            opacity: .6;
-        }
+        font-size: 25px;
     }
 
     div{
