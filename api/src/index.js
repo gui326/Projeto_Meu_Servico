@@ -10,6 +10,6 @@ app.use(cors())
 
 routes(app);
 
-app.listen(port, () => console.log(`server is running in port ${port}`));
+app.listen(port, "localhost", () => console.log(`server is running in port ${port}`));
 
 module.exports = app;
